@@ -19,13 +19,25 @@ public class BattleManager : MonoBehaviour
     public int playerAttackDamage = 100;
 
     private bool isFightBarActive = false;
+    private FightbarController fightbarController;  // Reference đến FightbarController
     public BattleState state = BattleState.PlayerTurn;
 
     void Start()
     {
         // Khởi tạo UI cho lượt Player
         if (soul != null) soul.SetActive(false);
-        if (fightbar != null) fightbar.SetActive(false);
+        if (fightbar != null)
+        {
+            fightbar.SetActive(false);
+            // Lấy reference đến FightbarController
+            fightbarController = fightbar.GetComponent<FightbarController>();
+
+            // Subscribe to event từ FightbarController
+            if (fightbarController != null)
+            {
+                fightbarController.OnPlayerStopFilling += OnPlayerStopFilling;
+            }
+        }
 
         if (fightButton != null)
         {
@@ -38,12 +50,7 @@ public class BattleManager : MonoBehaviour
 
     void Update()
     {
-        if (isFightBarActive && Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Player confirmed attack with Enter.");
-            DealDamageToEnemy();  // ← Gây damage mỗi lần nhấn Enter
-            EndPlayerTurn();      // ← Kết thúc lượt
-        }
+
     }
 
     // -------------------------
@@ -73,6 +80,14 @@ public class BattleManager : MonoBehaviour
         if (fightButton != null) fightButton.interactable = false;
 
         isFightBarActive = true;
+    }
+
+    // Callback khi player dừng fightbar
+    void OnPlayerStopFilling(float damageMultiplier)
+    {
+        Debug.Log($"💥 Player stops at multiplier: {damageMultiplier:P}");
+        DealDamageToEnemy(damageMultiplier);
+        EndPlayerTurn();
     }
 
     public void EndPlayerTurn()
@@ -111,7 +126,7 @@ public class BattleManager : MonoBehaviour
                 if (eventField != null && eventField.FieldType == typeof(System.Action))
                 {
                     var current = (System.Action)eventField.GetValue(attackScript);
-                    current -= OnEnemyAttackFinished; 
+                    current -= OnEnemyAttackFinished;
                     current += OnEnemyAttackFinished;
                     eventField.SetValue(attackScript, current);
                 }
@@ -148,16 +163,34 @@ public class BattleManager : MonoBehaviour
 
         StartPlayerTurn();
     }
-    void DealDamageToEnemy()
+
+    // Overload method với damage multiplier
+    void DealDamageToEnemy(float damageMultiplier)
     {
         if (enemyHealth != null)
         {
-            Debug.Log("💥 Player deals damage to enemy!");
-            enemyHealth.TakeDamage(playerAttackDamage);
+            int finalDamage = Mathf.RoundToInt(playerAttackDamage * damageMultiplier);
+            Debug.Log($"💥 Player deals {finalDamage} damage to enemy! (Base: {playerAttackDamage} × {damageMultiplier:P})");
+            enemyHealth.TakeDamage(finalDamage);
         }
         else
         {
             Debug.LogWarning("⚠️ EnemyHealth is missing! Make sure it's assigned in the Inspector or via code.");
+        }
+    }
+
+    // Method cũ để backward compatibility
+    void DealDamageToEnemy()
+    {
+        DealDamageToEnemy(1f); // Full damage nếu không có multiplier
+    }
+
+    void OnDestroy()
+    {
+        // Unsubscribe để tránh memory leak
+        if (fightbarController != null)
+        {
+            fightbarController.OnPlayerStopFilling -= OnPlayerStopFilling;
         }
     }
 }

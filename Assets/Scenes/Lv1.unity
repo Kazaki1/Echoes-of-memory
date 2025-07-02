@@ -14809,7 +14809,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
-  position: {x: 0, y: 0}
+  lastGroundedPosition: {x: 0, y: 0}
+  checkpointPosition: {x: 0, y: 0}
 --- !u!1 &245618973
 GameObject:
   m_ObjectHideFlags: 0

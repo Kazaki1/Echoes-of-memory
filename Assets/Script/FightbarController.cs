@@ -10,6 +10,9 @@ public class FightbarController : MonoBehaviour
     private bool isForward = true;
     private float currentValue = 0f;
 
+    // Event để gửi damage multiplier về BattleManager
+    public System.Action<float> OnPlayerStopFilling;
+
     void OnEnable()
     {
         currentValue = 0f;
@@ -31,7 +34,7 @@ public class FightbarController : MonoBehaviour
             if (currentValue >= fightSlider.maxValue)
             {
                 currentValue = fightSlider.maxValue;
-                isForward = false; 
+                isForward = false;
             }
         }
         else
@@ -41,8 +44,12 @@ public class FightbarController : MonoBehaviour
             if (currentValue <= fightSlider.minValue)
             {
                 currentValue = fightSlider.minValue;
-                isFilling = false; 
+                isFilling = false;
                 Debug.Log("Tự động dừng tại giá trị thấp nhất (0)");
+
+                // Gửi damage multiplier = 0% về BattleManager
+                float damageMultiplier = 0f;
+                OnPlayerStopFilling?.Invoke(damageMultiplier);
                 return;
             }
         }
@@ -50,11 +57,17 @@ public class FightbarController : MonoBehaviour
         fightSlider.value = currentValue;
 
         // Người chơi dừng thủ công
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             isFilling = false;
-            Debug.Log("Người chơi dừng tại: " + fightSlider.value);
-            // TODO: Gọi xử lý chém/damage tại đây
+
+            // Tính damage multiplier dựa trên vị trí dừng
+            float damageMultiplier = fightSlider.value / fightSlider.maxValue;
+
+            Debug.Log($"Người chơi dừng tại: {fightSlider.value}/{fightSlider.maxValue} - Damage Multiplier: {damageMultiplier:P}");
+
+            // Gửi damage multiplier về BattleManager
+            OnPlayerStopFilling?.Invoke(damageMultiplier);
         }
     }
 }
