@@ -2174,6 +2174,42 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 457975887099130076, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
   m_PrefabInstance: {fileID: 5436926624140112398}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &1736388701
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736388696}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &1848523803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,7 +2846,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 457975887099130076, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1736388701}
   m_SourcePrefab: {fileID: 100100000, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

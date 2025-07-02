@@ -93,4 +93,13 @@ public class AlternatingRainAttack : EnemyAttackBase
             Destroy(bullet);
         }
     }
+
+    void OnDestroy()
+    {
+        Debug.Log("Bullet destroyed: " + gameObject.name);
+    }
+    void OnDisable()
+    {
+        Destroy(gameObject);
+    }
 }
