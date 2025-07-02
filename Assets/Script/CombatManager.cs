@@ -92,7 +92,7 @@ public class CombatManager : MonoBehaviour
 
     void ResetStepCounter()
     {
-        stepsToCombat = Random.Range(100,200); // 20 đến 60 bước
+        stepsToCombat = Random.Range(100,200); 
         currentStepCount = 0;
         Debug.Log($"Steps to next combat: {stepsToCombat}");
     }

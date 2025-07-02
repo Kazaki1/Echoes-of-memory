@@ -366,7 +366,7 @@ public class PlayerController : MonoBehaviour
     void TrackStep()
     {
         if (combatManager == null) return;
-        float stepDistance = 1f; // Độ dài 1 bước, có thể điều chỉnh
+        float stepDistance = 0.5f; // Độ dài 1 bước, có thể điều chỉnh
         if (Vector2.Distance((Vector2)transform.position, lastStepPosition) >= stepDistance)
         {
             combatManager.OnPlayerStep();
