@@ -9,71 +9,88 @@ public class AlternatingRainAttack : EnemyAttackBase
     public float bulletSpeed = 6f;
 
     [Header("Timing Settings")]
-    public float fireInterval = 0.3f;
-    public float delayBetweenBullets = 0.1f;
-    public int StopAttackTime = 5;
+    public float fireInterval = 0.8f;           // Khoảng cách giữa mỗi lần bắn (1 cặp)
+    public float delayBetweenBullets = 0.15f;   // Delay giữa viên phải và viên trái
+    public int stopAfterSeconds = 5;
 
-    [Header("Spiral Settings")]
-    public float spiralAngleStep = 30f; // Góc xoắn ốc mỗi lần bắn
+    [Header("Offset Settings")]
+    public float xOffset = 1.5f; // khoảng cách lệch trái–phải
+    private bool alternate = false;
 
-    private bool attacking = false;
-    private float currentAngle = 0f;
+    private bool isAttacking = false;
+    private List<GameObject> activeBullets = new List<GameObject>();
 
     public Action OnAttackFinished;
-    private List<GameObject> activeBullets = new List<GameObject>();
 
     public override void StartAttack()
     {
-        attacking = true;
-        currentAngle = 0f;
-        InvokeRepeating(nameof(Fire), 0f, fireInterval);
+        if (isAttacking) return;
 
-        if (StopAttackTime > 0)
-            Invoke(nameof(StopAttack), StopAttackTime);
+        Debug.Log("🔫 Rain Attack Started");
+        isAttacking = true;
+        alternate = false;
+
+        InvokeRepeating(nameof(FirePair), 0f, fireInterval);
+        Invoke(nameof(StopAttack), stopAfterSeconds);
     }
 
     public override void StopAttack()
     {
-        if (!attacking) return;
+        if (!isAttacking) return;
 
-        attacking = false;
-        CancelInvoke(nameof(Fire));
+        Debug.Log("🛑 Rain Attack Stopped");
+        isAttacking = false;
 
-        foreach (GameObject bullet in activeBullets)
+        CancelInvoke(nameof(FirePair));
+
+        foreach (var bullet in activeBullets)
         {
             if (bullet != null)
-                bullet.SetActive(false);
+                Destroy(bullet);
         }
-
         activeBullets.Clear();
-        Debug.Log("Alternating spiral attack stopped.");
+
         OnAttackFinished?.Invoke();
     }
 
-    void Fire()
+    void FirePair()
     {
-        if (!attacking) return;
+        if (!isAttacking || bulletPrefab == null) return;
 
-        int bulletCount = 12; // Số viên đạn trên vòng tròn
-        float angleStep = 360f / bulletCount;
-        float startAngle = currentAngle;
+        float offsetAmount = alternate ? xOffset : -xOffset;
+        alternate = !alternate;
 
-        for (int i = 0; i < bulletCount; i++)
-        {
-            float angle = startAngle + i * angleStep;
-            SpawnBullet(angle);
-        }
+        Vector2 rightPos = (Vector2)transform.position + new Vector2(offsetAmount, 0f);
+        Vector2 leftPos = (Vector2)transform.position + new Vector2(-offsetAmount, 0f);
+        Vector2 direction = Vector2.down;
 
-        currentAngle += spiralAngleStep; // Xoay vòng cho lần bắn tiếp theo
+        // Bắn viên bên phải ngay
+        SpawnBullet(rightPos, direction);
+
+        // Bắn viên bên trái sau delayBetweenBullets
+        StartCoroutine(DelayedLeftBullet(leftPos, direction));
     }
 
-    void SpawnBullet(float angle)
+    System.Collections.IEnumerator DelayedLeftBullet(Vector2 spawnPos, Vector2 dir)
     {
-        Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(delayBetweenBullets);
+        SpawnBullet(spawnPos, dir);
+    }
+
+    void SpawnBullet(Vector2 spawnPos, Vector2 dir)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
         Bullet b = bullet.GetComponent<Bullet>();
-        b.direction = dir.normalized;
-        b.speed = bulletSpeed;
-        activeBullets.Add(bullet);
+        if (b != null)
+        {
+            b.direction = dir.normalized;
+            b.speed = bulletSpeed;
+            activeBullets.Add(bullet);
+        }
+        else
+        {
+            Debug.LogWarning("Bullet prefab is missing Bullet script!");
+            Destroy(bullet);
+        }
     }
 }

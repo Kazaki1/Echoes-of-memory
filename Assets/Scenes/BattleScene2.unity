@@ -1388,6 +1388,52 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 457975887099130076, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
   m_PrefabInstance: {fileID: 1930599607}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &898541944
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898541938}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1037832251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,10 +1853,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 898541938}
   bulletSpeed: 5
-  fireInterval: 0.3
-  delayBetweenBullets: 0.3
-  StopAttackTime: 8
-  spiralAngleStep: 30
+  fireInterval: 0.25
+  delayBetweenBullets: 0.25
+  stopAfterSeconds: 5
+  xOffset: 2.75
 --- !u!4 &1391668578
 Transform:
   m_ObjectHideFlags: 0
@@ -2466,24 +2512,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2124906561459619361, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+    - target: {fileID: 2124906561459619361, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5162621682431371177, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 5.192259
       objectReference: {fileID: 0}
     - target: {fileID: 5162621682431371177, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.10227262
       objectReference: {fileID: 0}
     - target: {fileID: 5162621682431371177, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.78
+      value: -2.15
       objectReference: {fileID: 0}
     - target: {fileID: 5162621682431371177, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.23
+      value: 6.29
       objectReference: {fileID: 0}
     - target: {fileID: 5162621682431371177, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2524,7 +2574,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 457975887099130076, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 898541944}
   m_SourcePrefab: {fileID: 100100000, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
 --- !u!114 &4819062293771669949 stripped
 MonoBehaviour:
@@ -2712,11 +2765,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5162621682431371177, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.78
+      value: -5.791
       objectReference: {fileID: 0}
     - target: {fileID: 5162621682431371177, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.23
+      value: 6.234
       objectReference: {fileID: 0}
     - target: {fileID: 5162621682431371177, guid: bf09974c1017ebf43b89eecb7a55c38e, type: 3}
       propertyPath: m_LocalPosition.z
