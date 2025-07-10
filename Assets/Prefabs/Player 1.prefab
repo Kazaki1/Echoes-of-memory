@@ -209,6 +209,12 @@ MonoBehaviour:
   fadeCanvasGroup: {fileID: 0}
   fadeDuration: 1
   respawnDelay: 1.5
+  slashEffect: {fileID: 0}
+  slashCooldown: 0.3
+  slashOffsetY: -0.5
+  recoilForce: 15
+  recoilCooldown: 0.3
+  recoilBoxOffsetY: 1.5
 --- !u!114 &1074439509207785058
 MonoBehaviour:
   m_ObjectHideFlags: 0

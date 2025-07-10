@@ -65,6 +65,21 @@ public class PlayerController : MonoBehaviour
 
     private bool wasGrounded = false;
 
+    [Header("Slash Effect Settings")]
+    public GameObject slashEffect; // Prefab hiệu ứng slash, gán trong Inspector
+    [SerializeField] private float slashCooldown = 0.3f;
+    [SerializeField] private float slashOffsetY = -0.5f;
+    private float lastSlashTime = -10f;
+
+
+    [Header("Recoil Settings")]
+    [SerializeField] private float recoilForce = 15f; // Lực bật ngược khi va chạm dưới chân
+    [SerializeField] private float recoilCooldown = 0.3f;
+    [SerializeField] private float recoilBoxOffsetY = 1.5f;
+    [SerializeField] private float maxCheckDistance = 2f;
+    private float lastRecoilTime = -10f;
+    [SerializeField] private LayerMask pogoMask;
+
     void Awake()
     {
         if (PlayerData.Instance != null)
@@ -116,6 +131,8 @@ public class PlayerController : MonoBehaviour
         StartDash();
         TrackStep();
         TrackGroundedTransition();
+        HandleDownSlash();
+        HandleDownRecoil(); // Gọi hàm kiểm tra recoil
     }
 
     void GetInputs()
@@ -427,6 +444,85 @@ public class PlayerController : MonoBehaviour
         hasDoubleJumpAbility = false;
         hasDashAbility = false;
     }
+
+    void HandleDownSlash()
+    {
+        if (rb.velocity.y < 0 && !Grounded() && Time.time - lastSlashTime > slashCooldown)
+        {
+            if (Input.GetAxisRaw("Vertical") < 0 && Input.GetKeyDown(KeyCode.J))
+            {
+                if (animator != null)
+                {
+                    animator.SetTrigger("Pogo");
+                }
+                if (slashEffect != null)
+                {
+                    Vector3 spawnPos = transform.position + Vector3.down * slashOffsetY;
+                    Quaternion rotation = Quaternion.Euler(0, 0, -90);
+
+                    GameObject slash = Instantiate(slashEffect, spawnPos, rotation);
+                    slash.transform.localScale = Vector3.one;
+                    Destroy(slash, 0.3f);
+                    lastSlashTime = Time.time;
+                }
+
+            }
+        }
+    }
+
+    // Hàm kiểm tra S+J và va chạm dưới chân để recoil
+    void HandleDownRecoil()
+    {
+        // Kiểm tra các điều kiện pogo
+        if (Input.GetAxisRaw("Vertical") < 0 &&
+            Input.GetKeyDown(KeyCode.J) &&
+            rb.velocity.y < 0 &&
+            Time.time - lastRecoilTime > recoilCooldown)
+        {
+            // Tạo hộp kiểm tra bên dưới nhân vật   
+            Vector2 boxSize = new Vector2(0.1f, maxCheckDistance);
+            Vector2 boxCenter = (Vector2)groundCheckPoint.position + Vector2.down * (maxCheckDistance / 2f);
+
+            Collider2D hit = Physics2D.OverlapBox(boxCenter, boxSize, 0f, pogoMask);
+
+            if (hit != null)
+            {
+                // Bật ngược lên
+                rb.velocity = new Vector2(rb.velocity.x, recoilForce);
+                lastRecoilTime = Time.time;
+
+                // Reset lại khả năng nhảy giữa không trung
+                airJumpCounter = 0;
+            }
+        }
+    }
+
+#if UNITY_EDITOR
+    // Vẽ gizmo để debug vùng va chạm recoil
+    void OnDrawGizmosSelected()
+    {
+        if (groundCheckPoint == null) return;
+
+        Vector2 boxSize = new Vector2(0.5f, maxCheckDistance);
+        Vector2 boxCenter = (Vector2)groundCheckPoint.position + Vector2.down * (maxCheckDistance / 2f);
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(boxCenter, boxSize);
+        {
+            // GIZMO CHO VỊ TRÍ SLASH
+            Gizmos.color = Color.red;
+
+            // Vị trí spawn của slash giống như trong HandleDownSlash()
+            Vector3 slashSpawnPos = transform.position + Vector3.down * slashOffsetY;
+            Gizmos.DrawWireSphere(slashSpawnPos, 0.1f); // Vẽ hình cầu nhỏ để dễ thấy
+
+            // Nếu đã có vẽ recoil box rồi thì không cần vẽ lại ở đây
+        }
+    }
+
+#endif
+
+
     void OnDestroy()
     {
         if (PlayerData.Instance != null)

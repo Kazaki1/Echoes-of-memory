@@ -9,9 +9,11 @@ public class CombatManager : MonoBehaviour
     private int currentStepCount = 0;
     private bool inCombat = false;
     private bool pendingTransition = false;
+    private System.Random trueRandom;
 
     void Start()
     {
+        trueRandom = new System.Random(); // dùng thời gian hệ thống làm seed
         ResetStepCounter();
     }
 
@@ -92,7 +94,7 @@ public class CombatManager : MonoBehaviour
 
     void ResetStepCounter()
     {
-        stepsToCombat = Random.Range(100,200); 
+        stepsToCombat = trueRandom.Next(100, 200); 
         currentStepCount = 0;
         Debug.Log($"Steps to next combat: {stepsToCombat}");
     }

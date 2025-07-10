@@ -105,7 +105,6 @@ public class BattleManager : MonoBehaviour
         Debug.Log("👾 Enemy's Turn");
         state = BattleState.EnemyTurn;
 
-        // Random pattern mỗi lượt
         if (enemyManager != null)
         {
             Debug.Log("Gọi enemyManager.SetupEnemy()");
@@ -164,7 +163,6 @@ public class BattleManager : MonoBehaviour
         StartPlayerTurn();
     }
 
-    // Overload method với damage multiplier
     void DealDamageToEnemy(float damageMultiplier)
     {
         if (enemyHealth != null)
@@ -179,15 +177,13 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    // Method cũ để backward compatibility
     void DealDamageToEnemy()
     {
-        DealDamageToEnemy(1f); // Full damage nếu không có multiplier
+        DealDamageToEnemy(1f);
     }
 
     void OnDestroy()
     {
-        // Unsubscribe để tránh memory leak
         if (fightbarController != null)
         {
             fightbarController.OnPlayerStopFilling -= OnPlayerStopFilling;
