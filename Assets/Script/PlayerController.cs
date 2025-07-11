@@ -75,7 +75,6 @@ public class PlayerController : MonoBehaviour
     [Header("Recoil Settings")]
     [SerializeField] private float recoilForce = 15f; // Lực bật ngược khi va chạm dưới chân
     [SerializeField] private float recoilCooldown = 0.3f;
-    [SerializeField] private float recoilBoxOffsetY = 1.5f;
     [SerializeField] private float maxCheckDistance = 2f;
     private float lastRecoilTime = -10f;
     [SerializeField] private LayerMask pogoMask;
@@ -473,13 +472,11 @@ public class PlayerController : MonoBehaviour
     // Hàm kiểm tra S+J và va chạm dưới chân để recoil
     void HandleDownRecoil()
     {
-        // Kiểm tra các điều kiện pogo
         if (Input.GetAxisRaw("Vertical") < 0 &&
             Input.GetKeyDown(KeyCode.J) &&
             rb.velocity.y < 0 &&
             Time.time - lastRecoilTime > recoilCooldown)
-        {
-            // Tạo hộp kiểm tra bên dưới nhân vật   
+        {  
             Vector2 boxSize = new Vector2(0.1f, maxCheckDistance);
             Vector2 boxCenter = (Vector2)groundCheckPoint.position + Vector2.down * (maxCheckDistance / 2f);
 
@@ -487,11 +484,10 @@ public class PlayerController : MonoBehaviour
 
             if (hit != null)
             {
-                // Bật ngược lên
+
                 rb.velocity = new Vector2(rb.velocity.x, recoilForce);
                 lastRecoilTime = Time.time;
 
-                // Reset lại khả năng nhảy giữa không trung
                 airJumpCounter = 0;
             }
         }

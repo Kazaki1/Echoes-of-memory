@@ -1,0 +1,615 @@
+fileFormatVersion: 2
+guid: 2be87ae75b0e2df4daf726082aa268ad
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6366271450895349238
+    second: SpriteAtlasTexture-Acid_top-512x1024-fmt12_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 959
+        width: 367
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a0ca968d576a7a0800000000000000
+      internalID: -6366271450895349238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 931
+        width: 370
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca00a1585d4965f4c91cc703c076f614
+      internalID: 109715769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_2
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 897
+        width: 348
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18a0f7aa6a42c044ab219fa7718e8ab
+      internalID: -1865813233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 865
+        width: 354
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf7695cfb16ceb49a9a8ac51cfaa12d
+      internalID: 1531843066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 838
+        width: 349
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6617e9d587fcd4c8af376e77dc50cd
+      internalID: -1748231163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 803
+        width: 355
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffbe94568b16e7c4ca69979e247fa8f6
+      internalID: -1264505915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 771
+        width: 352
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0c823be1bddf84983a2942b7732187
+      internalID: -994715244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_7
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 740
+        width: 353
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec9e703d3f1e4847ad5ed9b0f1dce9d
+      internalID: -436560475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 705
+        width: 368
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c69f80994a6b54fadf46b860815d42
+      internalID: 2080270003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_9
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 675
+        width: 348
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b0c9c51b91bb740803c7e39a1f71fd
+      internalID: -1693058617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_10
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 642
+        width: 352
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a2447afbef67224089590819bf56f37
+      internalID: -1065856414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_11
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 612
+        width: 362
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7005500d29307546b36ffde002928aa
+      internalID: 2109870250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 581
+        width: 354
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc4b5a3bd711bd4d81c050595091d37
+      internalID: -387815484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_13
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 552
+        width: 356
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10125e66fa04f8f4087f11c57fe9b4d1
+      internalID: -1952617467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_14
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 517
+        width: 360
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eff1e2833c401b4e86558efd735e991
+      internalID: 89548568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_15
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 482
+        width: 363
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d9ce6e2312ee249a8634b1b0bbd56f
+      internalID: -224749887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_16
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 449
+        width: 359
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d84aff95579e74ba81651fb1cf2cca
+      internalID: 531723188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_17
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 418
+        width: 362
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f08cc52f529ec47bbd73af12a3387a
+      internalID: 608249455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_18
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 389
+        width: 374
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f18afde50f2f2a54ea99cbbc46e8cff8
+      internalID: -1949004943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_19
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 354
+        width: 364
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea8f7de7b6540e48b85f781d492cc88
+      internalID: 830027083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Acid_top-512x1024-fmt12_20
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 319
+        width: 347
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06e4064e945ca764894e4973e9fe7baa
+      internalID: -1229976521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bcfa023a6ef7d9c42a1c34ca25ecde01
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_1: 109715769
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_10: -1065856414
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_11: 2109870250
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_12: -387815484
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_13: -1952617467
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_14: 89548568
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_15: -224749887
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_16: 531723188
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_17: 608249455
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_18: -1949004943
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_19: 830027083
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_2: -1865813233
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_20: -1229976521
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_3: 1531843066
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_4: -1748231163
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_5: -1264505915
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_6: -994715244
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_7: -436560475
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_8: 2080270003
+      SpriteAtlasTexture-Acid_top-512x1024-fmt12_9: -1693058617
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

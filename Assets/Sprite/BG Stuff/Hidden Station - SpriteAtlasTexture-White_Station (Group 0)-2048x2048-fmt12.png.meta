@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 68243eb2040670448b7405a412876851
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9034750575726882633
+    second: Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_0
+  - first:
+      213: -4829447132703420563
+    second: Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_1
+  - first:
+      213: -2264362173384285241
+    second: Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_2
+  - first:
+      213: 3572528518860515649
+    second: Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_3
+  - first:
+      213: -7253300348392821803
+    second: Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_4
+  - first:
+      213: -4074334961522160896
+    second: Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_5
+  - first:
+      213: -7028720919217278549
+    second: Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_6
+  - first:
+      213: 8106552373710979545
+    second: Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_7
+  - first:
+      213: -1808403511942307704
+    second: Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_0
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 31
+        width: 238
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94fe47cc7c1e16d70800000000000000
+      internalID: 9034750575726882633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_2
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 786
+        width: 67
+        height: 351
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b9a65a553b1d4a41b836888e2c7cd13
+      internalID: -2264362173384285241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fb50dfd20a3affe4aba7e33eb3bcca83
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_0: 9034750575726882633
+      Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_1: -4829447132703420563
+      Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_2: -2264362173384285241
+      Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_3: 3572528518860515649
+      Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_4: -7253300348392821803
+      Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_5: -4074334961522160896
+      Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_6: -7028720919217278549
+      Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_7: 8106552373710979545
+      Hidden Station - SpriteAtlasTexture-White_Station (Group 0)-2048x2048-fmt12_8: -1808403511942307704
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
