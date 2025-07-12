@@ -484,11 +484,10 @@ public class PlayerController : MonoBehaviour
 
             if (hit != null)
             {
-
                 rb.velocity = new Vector2(rb.velocity.x, recoilForce);
                 lastRecoilTime = Time.time;
-
                 airJumpCounter = 0;
+                dashed = false; // Reset dash sau khi pogo
             }
         }
     }

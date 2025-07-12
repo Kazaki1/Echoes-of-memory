@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 7d4529e948a13d9499ad9878ac34a42b
+guid: 449f70ec4c1ecd749ab679e5d2c3d84f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2681785377395667910
-    second: fungd_spikes_04_0
+      213: 2629097211468378808
+    second: bone_deep_0110_g_0
   - first:
-      213: 6497160591844608183
-    second: fungd_spikes_04_1
+      213: -6650500466297738825
+    second: bone_deep_0110_g_1
   - first:
-      213: -8337265483714164296
-    second: fungd_spikes_04_2
+      213: 8105880430253386742
+    second: bone_deep_0110_g_2
   - first:
-      213: -3869515967731069558
-    second: fungd_spikes_04_3
-  - first:
-      213: 448971019114455465
-    second: fungd_spikes_04_4
-  - first:
-      213: 8187449767955178366
-    second: fungd_spikes_04_5
+      213: 2943005600174752690
+    second: bone_deep_0110_g_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -128,23 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fungd_spikes_04_5
+      name: bone_deep_0110_g_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 1
-        width: 331
-        height: 134
+        x: 6
+        y: 132
+        width: 16
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e73a25b5f2aaf9170800000000000000
-      internalID: 8187449767955178366
+      spriteID: 8b2fa89fbfd6c7420800000000000000
+      internalID: 2629097211468378808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone_deep_0110_g_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 28
+        width: 389
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b9e0cfcf0da4b3a0800000000000000
+      internalID: -6650500466297738825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone_deep_0110_g_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 120
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb2b05fd4fdd7070800000000000000
+      internalID: 8105880430253386742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone_deep_0110_g_3
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 0
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b3c66a2008a7d820800000000000000
+      internalID: 2943005600174752690
       vertices: []
       indices: 
       edges: []
@@ -153,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b47bb652d7840d14abf3da922bc3f2f4
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -162,13 +222,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      fungd_spikes_04_0: -2681785377395667910
-      fungd_spikes_04_1: 6497160591844608183
-      fungd_spikes_04_2: -8337265483714164296
-      fungd_spikes_04_3: -3869515967731069558
-      fungd_spikes_04_4: 448971019114455465
-      fungd_spikes_04_5: 8187449767955178366
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
