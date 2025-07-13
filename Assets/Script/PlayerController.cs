@@ -322,14 +322,28 @@ public class PlayerController : MonoBehaviour
     {
         return lastGroundedPosition;
     }
+    // Trả về RaycastHit2D? nếu chạm ground, null nếu không
+    RaycastHit2D? GroundedHit()
+    {
+        RaycastHit2D hit1 = Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, whatIsGround);
+        if (hit1.collider != null) return hit1;
+        RaycastHit2D hit2 = Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround);
+        if (hit2.collider != null) return hit2;
+        RaycastHit2D hit3 = Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround);
+        if (hit3.collider != null) return hit3;
+        return null;
+    }
+
     void UpdateJumpVariables()
     {
-        if (Grounded())
+        var groundHit = GroundedHit();
+        if (groundHit != null)
         {
             coyoteTimeCounter = coyoteTime;
             pState.jumping = false;
             airJumpCounter = 0;
 
+            // Chỉ cập nhật lastGroundedPosition nếu chạm ground layer
             lastGroundedPosition = transform.position;
             if (PlayerData.Instance != null)
             {

@@ -135744,6 +135744,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 117421520}
     - target: {fileID: 666097953878651037, guid: 02ce9b2526f2bf143989bd956738df6c, type: 3}
+      propertyPath: recoilForce
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 666097953878651037, guid: 02ce9b2526f2bf143989bd956738df6c, type: 3}
+      propertyPath: slashOffsetY
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 666097953878651037, guid: 02ce9b2526f2bf143989bd956738df6c, type: 3}
       propertyPath: combatManager
       value: 
       objectReference: {fileID: 0}
