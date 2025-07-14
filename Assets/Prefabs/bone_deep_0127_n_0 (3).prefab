@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3702853325721239219}
   - component: {fileID: 3294943415915814536}
   - component: {fileID: 9083313579470231943}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: bone_deep_0127_n_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

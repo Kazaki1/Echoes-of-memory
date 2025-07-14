@@ -125,13 +125,13 @@ TextureImporter:
       name: fungd_spikes_07_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 125
-        height: 212
+        x: 5
+        y: 10
+        width: 120
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 3, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -143,77 +143,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: fungd_spikes_07_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 91
-        width: 5
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1fecf905509c184b0800000000000000
-      internalID: -5439845850222178575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fungd_spikes_07_2
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 0
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c85beac2643c8190800000000000000
-      internalID: -7958928842554648382
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fungd_spikes_07_3
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 0
-        width: 64
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ac0099ce788293020800000000000000
-      internalID: 2321931647141347530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 93dbfed86bc6fa344a3c014d05e1f540
     internalID: 0
     vertices: []
     indices: 
