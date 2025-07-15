@@ -15,11 +15,26 @@ EditorBuildSettings:
     path: Assets/Scenes/Lv1.unity
     guid: bb7b69d59a8701b44974da68d2074181
   - enabled: 1
-    path: Assets/Scenes/BattleScene1.unity
+    path: Assets/Scenes/Battle/BattleScene1.unity
     guid: a3053b967c30e9049af52d6be4120441
   - enabled: 1
-    path: Assets/Scenes/BattleScene2.unity
+    path: Assets/Scenes/Battle/BattleScene2.unity
     guid: 1863851a35a6c184594122d7c19d68e7
+  - enabled: 1
+    path: Assets/Scenes/Battle/BattleScene3.unity
+    guid: 554ee77a89e0a084dbd6ff8cd5601fad
+  - enabled: 1
+    path: Assets/Scenes/Lv2.unity
+    guid: 50a97808271efb64d8621d264063aef0
+  - enabled: 1
+    path: Assets/Scenes/Lv4.unity
+    guid: 53e127c623788b540bacf6096f40185e
+  - enabled: 1
+    path: Assets/Scenes/Lv5.unity
+    guid: d4faa570d69ee274c8574c1aa4970efc
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 7005a8c1646af7449b04651b8fb90319
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
