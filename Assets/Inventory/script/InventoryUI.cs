@@ -80,6 +80,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+
     public void Toggle()
     {
         if (inventoryPanel != null)
