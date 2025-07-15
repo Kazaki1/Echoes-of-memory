@@ -45,7 +45,7 @@ public class SoulMover : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = movement * moveSpeed;
+        rb.linearVelocity = movement * moveSpeed;
     }
 
     public void TakeDamage(int damage)

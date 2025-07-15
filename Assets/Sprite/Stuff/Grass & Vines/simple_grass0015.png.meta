@@ -127,6 +127,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -297,7 +310,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      simple_grass0015_0: 5701372057411669353
+      simple_grass0015_1: -2609016702516685542
+      simple_grass0015_2: -1680002470552735743
+      simple_grass0015_3: 8568540311960393919
+      simple_grass0015_4: 2104625700614496028
+      simple_grass0015_5: 3670642954146151437
+      simple_grass0015_6: -4342257830386424160
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

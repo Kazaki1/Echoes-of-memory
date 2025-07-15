@@ -181,6 +181,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -747,7 +760,32 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fung_vine_cut010_0: -3812277102804306105
+      fung_vine_cut010_1: -5836269901450553137
+      fung_vine_cut010_10: -9095400562144019668
+      fung_vine_cut010_11: 3907043688414991928
+      fung_vine_cut010_12: 1145030745468917192
+      fung_vine_cut010_13: 7727795379355810111
+      fung_vine_cut010_14: -1853813388784119280
+      fung_vine_cut010_15: -3754666606844258682
+      fung_vine_cut010_16: -7674686237301802950
+      fung_vine_cut010_17: 1170447682026996760
+      fung_vine_cut010_18: 225931436854124953
+      fung_vine_cut010_19: 7291699254910370878
+      fung_vine_cut010_2: -1306134355505767889
+      fung_vine_cut010_20: -8558851580373694313
+      fung_vine_cut010_21: 8736386853523540941
+      fung_vine_cut010_22: -9092063205512728725
+      fung_vine_cut010_23: 1147748279137996616
+      fung_vine_cut010_24: -8591582994775687747
+      fung_vine_cut010_3: 9136839163367583979
+      fung_vine_cut010_4: 8982650832639878545
+      fung_vine_cut010_5: -7880455402245866799
+      fung_vine_cut010_6: 5518630293430806715
+      fung_vine_cut010_7: 5851397013834822925
+      fung_vine_cut010_8: -7287193843221762425
+      fung_vine_cut010_9: 6443683608806495548
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
