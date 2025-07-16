@@ -1274,11 +1274,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soul: {fileID: 1433972229}
   fightButton: {fileID: 642652940}
+  mercyButton: {fileID: 843284640}
   fightbar: {fileID: 1848523803}
   enemy: {fileID: 1037832252}
   enemyManager: {fileID: 124313435}
   enemyHealth: {fileID: 2037188955}
   playerAttackDamage: 40
+  mercySceneName: Lv2
   state: 0
 --- !u!1 &828266926
 GameObject:
@@ -1430,7 +1432,7 @@ GameObject:
   - component: {fileID: 843284641}
   - component: {fileID: 843284640}
   m_Layer: 5
-  m_Name: Item
+  m_Name: Mercy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1520,7 +1522,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6944574351304144974, guid: 285ecacbf285188448e8427991c6a2ee, type: 3}
+  m_Sprite: {fileID: 4279653180222505004, guid: 56029f5ccc6d9e849979258e095e6d34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

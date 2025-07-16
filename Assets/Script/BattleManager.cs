@@ -10,29 +10,28 @@ public enum BattleState
 
 public class BattleManager : MonoBehaviour
 {
-    public GameObject soul;             // Player soul object
-    public Button fightButton;          // Nút Fight
-    public GameObject fightbar;         // GameObject chứa thanh Slider và FightbarController
-    public EnemyController enemy;       // Script điều khiển quái vật
-    public EnemyManager enemyManager;   // Thêm tham chiếu tới EnemyManager
+    public GameObject soul;             
+    public Button fightButton;
+    public Button mercyButton;         
+    public GameObject fightbar;         
+    public EnemyController enemy;       
+    public EnemyManager enemyManager;   
     public EnemyHealth enemyHealth;
     public int playerAttackDamage = 100;
+    public string mercySceneName = "PeaceEnding";
 
     private bool isFightBarActive = false;
-    private FightbarController fightbarController;  // Reference đến FightbarController
+    private FightbarController fightbarController; 
     public BattleState state = BattleState.PlayerTurn;
 
     void Start()
     {
-        // Khởi tạo UI cho lượt Player
         if (soul != null) soul.SetActive(false);
         if (fightbar != null)
         {
             fightbar.SetActive(false);
-            // Lấy reference đến FightbarController
             fightbarController = fightbar.GetComponent<FightbarController>();
 
-            // Subscribe to event từ FightbarController
             if (fightbarController != null)
             {
                 fightbarController.OnPlayerStopFilling += OnPlayerStopFilling;
@@ -46,11 +45,27 @@ public class BattleManager : MonoBehaviour
         }
 
         StartPlayerTurn();
+        if (mercyButton != null)
+        {
+            mercyButton.onClick.AddListener(OnPlayerChooseMercy);
+            mercyButton.interactable = true;
+        }
     }
 
     void Update()
     {
 
+    }
+    public void OnPlayerChooseMercy()
+    {
+        if (state != BattleState.PlayerTurn) return;
+
+        Debug.Log("🤝 Player chose MERCY");
+        state = BattleState.Busy;
+
+        // (Có thể thêm hiệu ứng, fade, hoặc âm thanh tại đây nếu muốn)
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(mercySceneName);
     }
 
     // -------------------------
@@ -66,20 +81,26 @@ public class BattleManager : MonoBehaviour
         if (soul != null) soul.SetActive(false);
 
         isFightBarActive = false;
+        if (RouteManager.Instance != null)
+        {
+            RouteManager.Instance.guiltyPoint++;
+            Debug.Log("🔺 Guilty Point hiện tại: " + RouteManager.Instance.guiltyPoint);
+        }
     }
 
     public void OnPlayerChooseFight()
     {
+        if (mercyButton != null) mercyButton.gameObject.SetActive(false);
         if (state != BattleState.PlayerTurn) return;
 
         Debug.Log("🗡️ Player chose FIGHT");
-
         state = BattleState.Busy;
 
         if (fightbar != null) fightbar.SetActive(true);
         if (fightButton != null) fightButton.interactable = false;
 
         isFightBarActive = true;
+
     }
 
     // Callback khi player dừng fightbar

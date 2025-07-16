@@ -20193,7 +20193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &326188032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42360,6 +42360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9531093bf55b5774fba82d12ce3a7763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  activeColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!212 &681109852
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -46796,7 +46799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &743041737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90296,6 +90299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9531093bf55b5774fba82d12ce3a7763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  activeColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!212 &1410658305
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -107743,7 +107749,7 @@ RectTransform:
   m_Father: {fileID: 117421517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: 0.000030518, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -109500,6 +109506,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9531093bf55b5774fba82d12ce3a7763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  activeColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!212 &1731011440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -116860,8 +116869,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.256714, y: 12.199005}
-  m_SizeDelta: {x: 278.9679, y: 223.3826}
+  m_AnchoredPosition: {x: -39.514282, y: -140.16391}
+  m_SizeDelta: {x: 762.4995, y: 528.1084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1841761543
 CanvasGroup:
@@ -134077,6 +134086,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9531093bf55b5774fba82d12ce3a7763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  activeColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!212 &2122506975
 SpriteRenderer:
   m_ObjectHideFlags: 0
