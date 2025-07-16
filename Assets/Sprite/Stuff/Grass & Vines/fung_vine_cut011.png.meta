@@ -422,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fung_vine_cut011_0: -3931275141661024519
+      fung_vine_cut011_1: -7866237038117822335
+      fung_vine_cut011_10: 8770707896341499802
+      fung_vine_cut011_11: -6207435852914331835
+      fung_vine_cut011_2: 3115672727397387752
+      fung_vine_cut011_3: -5158589169423811159
+      fung_vine_cut011_4: 9182167526495293186
+      fung_vine_cut011_5: 342899636552425836
+      fung_vine_cut011_6: -1338529450571788067
+      fung_vine_cut011_7: -4967290416337590529
+      fung_vine_cut011_8: -3608493844522797102
+      fung_vine_cut011_9: -1877948584438530013
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

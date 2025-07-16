@@ -2,12 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class LaserPatternWithDiagonalStart : EnemyAttackBase
+public class LaserPattenRotating : EnemyAttackBase
 {
     [Header("Prefabs")]
-    public GameObject diagonalLaserPrefab;
-    public GameObject laserHorizontalPrefab;
-    public GameObject laserVerticalPrefab;
+    public GameObject warningLaserPrefab;
+    public GameObject laserPrefab;
 
     [Header("Timing Settings")]
     public float warningTime = 1f;
@@ -15,19 +14,23 @@ public class LaserPatternWithDiagonalStart : EnemyAttackBase
     public float attackInterval = 2f;
     public int maxAttacks = 3;
 
-    [Header("Grid Settings")]
+    [Header("Laser Settings")]
     public Transform fireOrigin;
-    public int horizontalCount = 3;
-    public int verticalCount = 3;
-    public float spacing = 1f;
-    public float angleOffsetPerAttack = 45f;
+    public int laserCount = 4; // chỉ 4 để bắn chéo: 45, 135, 225, 315
+    public float[] diagonalAngles = new float[] { 45f, 135f, 225f, 315f }; // bắn chéo
+    public float angleOffsetPerAttack = 0f;
+
+    [Header("Rotation Settings")]
+    public float rotationSpeed = 90f; // độ/giây
 
     public Action OnAttackFinished;
+
     private bool attacking = false;
 
     public override void StartAttack()
     {
         if (attacking) return;
+
         attacking = true;
         StartCoroutine(AttackLoop());
     }
@@ -35,109 +38,67 @@ public class LaserPatternWithDiagonalStart : EnemyAttackBase
     public override void StopAttack()
     {
         if (!attacking) return;
+
         attacking = false;
         StopAllCoroutines();
+
         OnAttackFinished?.Invoke();
     }
 
     private IEnumerator AttackLoop()
     {
         int attackCount = 0;
-        Vector3 center = fireOrigin != null ? fireOrigin.position : transform.position;
 
         while (attacking && attackCount < maxAttacks)
         {
-            GameObject[] warnings;
-            GameObject[] lasers;
+            GameObject[] warnings = new GameObject[laserCount];
 
-            if (attackCount == 0)
+            // Giai đoạn 1: Cảnh báo bắn chéo
+            for (int i = 0; i < laserCount; i++)
             {
-                // 🔰 BẮN CHÉO 4 HƯỚNG
-                float[] diagonalAngles = { 45f, 135f, 225f, 315f };
-                warnings = new GameObject[diagonalAngles.Length];
+                float angle = diagonalAngles[i] + attackCount * angleOffsetPerAttack;
+                Quaternion rot = Quaternion.Euler(0, 0, angle);
+                warnings[i] = Instantiate(warningLaserPrefab, fireOrigin.position, rot, transform);
+            }
 
-                for (int i = 0; i < diagonalAngles.Length; i++)
+            yield return new WaitForSeconds(warningTime);
+
+            foreach (var warn in warnings)
+                Destroy(warn);
+
+            // Giai đoạn 2: Tạo laser chéo, sau đó quay
+            GameObject[] lasers = new GameObject[laserCount];
+            Transform[] laserTransforms = new Transform[laserCount];
+
+            for (int i = 0; i < laserCount; i++)
+            {
+                float angle = diagonalAngles[i] + attackCount * angleOffsetPerAttack;
+                Quaternion rot = Quaternion.Euler(0, 0, angle);
+                GameObject laser = Instantiate(laserPrefab, fireOrigin.position, rot, transform);
+                lasers[i] = laser;
+                laserTransforms[i] = laser.transform;
+            }
+
+            float elapsed = 0f;
+            while (elapsed < laserDuration)
+            {
+                float rotateAmount = rotationSpeed * Time.deltaTime;
+                foreach (Transform laser in laserTransforms)
                 {
-                    Quaternion rot = Quaternion.Euler(0f, 0f, diagonalAngles[i]);
-                    warnings[i] = Instantiate(diagonalLaserPrefab, center, rot, transform);
+                    laser.RotateAround(fireOrigin.position, Vector3.forward, -rotateAmount); // quay chiều kim
                 }
 
-                yield return new WaitForSeconds(warningTime);
-                foreach (var warn in warnings) if (warn) Destroy(warn);
-
-                lasers = new GameObject[diagonalAngles.Length];
-                for (int i = 0; i < diagonalAngles.Length; i++)
-                {
-                    Quaternion rot = Quaternion.Euler(0f, 0f, diagonalAngles[i]);
-                    lasers[i] = Instantiate(diagonalLaserPrefab, center, rot, transform);
-                }
-
-                yield return new WaitForSeconds(laserDuration);
-                foreach (var laser in lasers) if (laser) Destroy(laser);
+                elapsed += Time.deltaTime;
+                yield return null;
             }
-            else
-            {
-                // 🔁 SPAWN LƯỚI XOAY
-                float currentRotation = (attackCount - 1) * angleOffsetPerAttack;
-                Quaternion rotation = Quaternion.AngleAxis(currentRotation, Vector3.forward);
 
-                Vector3[] horizontalPositions = GenerateGrid(center, horizontalCount, spacing, Axis.Y, rotation);
-                Vector3[] verticalPositions = GenerateGrid(center, verticalCount, spacing, Axis.X, rotation);
-
-                warnings = new GameObject[horizontalPositions.Length + verticalPositions.Length];
-                int index = 0;
-
-                foreach (var pos in horizontalPositions)
-                    warnings[index++] = Instantiate(laserHorizontalPrefab, pos, rotation, transform);
-                foreach (var pos in verticalPositions)
-                    warnings[index++] = Instantiate(laserVerticalPrefab, pos, rotation, transform);
-
-                yield return new WaitForSeconds(warningTime);
-                foreach (var warn in warnings) if (warn) Destroy(warn);
-
-                lasers = new GameObject[horizontalPositions.Length + verticalPositions.Length];
-                index = 0;
-
-                foreach (var pos in horizontalPositions)
-                    lasers[index++] = Instantiate(laserHorizontalPrefab, pos, rotation, transform);
-                foreach (var pos in verticalPositions)
-                    lasers[index++] = Instantiate(laserVerticalPrefab, pos, rotation, transform);
-
-                yield return new WaitForSeconds(laserDuration);
-                foreach (var laser in lasers) if (laser) Destroy(laser);
-            }
+            foreach (var laser in lasers)
+                Destroy(laser);
 
             attackCount++;
             yield return new WaitForSeconds(attackInterval);
         }
 
         StopAttack();
-    }
-
-    enum Axis { X, Y }
-
-    private Vector3[] GenerateGrid(Vector3 center, int count, float spacing, Axis axis, Quaternion rotation)
-    {
-        Vector3[] positions = new Vector3[count];
-        int half = count / 2;
-
-        for (int i = 0; i < count; i++)
-        {
-            int offset = i - half;
-            if (count % 2 == 0 && offset >= 0) offset++;
-
-            Vector3 pos = axis == Axis.X
-                ? new Vector3(center.x + offset * spacing, center.y, center.z)
-                : new Vector3(center.x, center.y + offset * spacing, center.z);
-
-            positions[i] = RotateAroundPoint(pos, center, rotation);
-        }
-
-        return positions;
-    }
-
-    private Vector3 RotateAroundPoint(Vector3 point, Vector3 pivot, Quaternion rotation)
-    {
-        return rotation * (point - pivot) + pivot;
     }
 }

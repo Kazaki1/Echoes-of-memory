@@ -168,7 +168,10 @@ MonoBehaviour:
     name: 1
     image: {fileID: -2872886438609257661, guid: 688042ee26b3997479060c702a604975, type: 3}
     patternPrefabs:
+    - {fileID: 1029580548}
+    - {fileID: 252619854}
     - {fileID: 1767691319}
+    - {fileID: 1116071890}
 --- !u!1 &197632801
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +348,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 252619856}
-  - component: {fileID: 252619855}
+  - component: {fileID: 252619857}
+  - component: {fileID: 252619858}
   m_Layer: 0
   m_Name: 'Laser 2 '
   m_TagString: Untagged
@@ -353,28 +357,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &252619855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 252619854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 446cd79d20bd5864892a223fa1e3d15d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserHorizontalPrefab: {fileID: 2060527505}
-  laserVerticalPrefab: {fileID: 0}
-  warningTime: 1
-  laserDuration: 2
-  attackInterval: 3
-  maxAttacks: 1
-  centerPoint: {fileID: 357382028}
-  horizontalCount: 4
-  verticalCount: 4
-  spacing: 1
 --- !u!4 &252619856
 Transform:
   m_ObjectHideFlags: 0
@@ -391,6 +373,45 @@ Transform:
   - {fileID: 357382028}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &252619857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252619854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3053463630cfc764297034c080ec77a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warningLaserPrefab: {fileID: 2044693062}
+  laserPrefab: {fileID: 2060527505}
+  warningTime: 0.5
+  laserDuration: 4
+  attackInterval: 1
+  maxAttacks: 3
+  fireOrigin: {fileID: 357382028}
+  laserCount: 4
+  diagonalAngles:
+  - 45
+  - 135
+  - 225
+  - 315
+  angleOffsetPerAttack: 45
+  rotationSpeed: 90
+--- !u!114 &252619858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252619854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feec9ae5242bbb34cb25bc3d671cba04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &270957131
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +583,37 @@ Transform:
   - {fileID: 1291218123}
   - {fileID: 1937742000}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &629326394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 629326395}
+  m_Layer: 0
+  m_Name: Laser (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &629326395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629326394}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.8191595, y: -0.97046566, z: -0.14482619}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1029580551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &642652936
 GameObject:
@@ -1498,6 +1550,81 @@ Transform:
   - {fileID: 298398549}
   - {fileID: 741828697}
   - {fileID: 1583623477}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1029580548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029580551}
+  - component: {fileID: 1029580550}
+  - component: {fileID: 1029580549}
+  m_Layer: 0
+  m_Name: Laser 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1029580549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029580548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feec9ae5242bbb34cb25bc3d671cba04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1029580550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029580548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3053463630cfc764297034c080ec77a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warningLaserPrefab: {fileID: 2044693062}
+  laserPrefab: {fileID: 2060527505}
+  warningTime: 0.5
+  laserDuration: 4
+  attackInterval: 1
+  maxAttacks: 3
+  fireOrigin: {fileID: 629326395}
+  laserCount: 6
+  diagonalAngles:
+  - 12
+  - 24
+  - 345
+  - 32
+  - 234
+  - 256
+  angleOffsetPerAttack: 45
+  rotationSpeed: 90
+--- !u!4 &1029580551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029580548}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8285332, y: -0.64432263, z: 0.24192536}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 629326395}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1037832251
@@ -3219,7 +3346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b14998faba5e54799068dab119003b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 300
   currentHealth: 0
   healthBar: {fileID: 1317922737}
   deathSceneName: 
@@ -3253,6 +3380,7 @@ SceneRoots:
   - {fileID: 846077707}
   - {fileID: 1190661021}
   - {fileID: 252619856}
+  - {fileID: 1029580551}
   - {fileID: 1802117677}
   - {fileID: 1767691322}
   - {fileID: 986011477}

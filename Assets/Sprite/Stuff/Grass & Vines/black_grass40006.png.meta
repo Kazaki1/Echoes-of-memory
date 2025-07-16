@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      black_grass40006_0: -4021860084138986405
+      black_grass40006_1: -7816960496862224402
+      black_grass40006_2: -4448295656882563481
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

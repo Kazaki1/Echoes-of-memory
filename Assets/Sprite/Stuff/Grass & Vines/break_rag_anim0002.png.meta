@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      break_rag_anim0002_0: -402023945028058589
+      break_rag_anim0002_1: -3508324349351897538
+      break_rag_anim0002_2: -3130901828083094438
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

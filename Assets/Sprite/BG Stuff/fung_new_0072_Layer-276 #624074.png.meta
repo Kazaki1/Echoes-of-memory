@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fung_new_0072_Layer-276 #624074_0: 2680474383346276509
+      fung_new_0072_Layer-276 #624074_1: 531492283835915417
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

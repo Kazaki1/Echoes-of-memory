@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      simple_grass_death0000_0: -3426074135925565422
+      simple_grass_death0000_1: -1797235845877208623
+      simple_grass_death0000_2: -2284394505037837096
+      simple_grass_death0000_3: -1108876953559542456
+      simple_grass_death0000_4: -1602240661044358755
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

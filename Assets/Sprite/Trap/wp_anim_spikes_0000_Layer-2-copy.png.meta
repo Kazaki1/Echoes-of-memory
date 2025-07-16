@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wp_anim_spikes_0000_Layer-2-copy_0: 5771548208179696599
+      wp_anim_spikes_0000_Layer-2-copy_1: -8280347009950118854
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

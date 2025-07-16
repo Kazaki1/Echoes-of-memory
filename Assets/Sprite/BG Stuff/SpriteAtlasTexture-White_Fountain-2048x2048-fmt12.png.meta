@@ -597,7 +597,26 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_0: 4579926779628800594
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_1: 5360055413353412357
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_10: -853649980172311278
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_11: 6636719030258681291
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_12: 2288130924429556445
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_13: -7860424801979236568
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_14: -2903276965600645096
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_15: 9079537653963016327
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_16: -1209595276073320860
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_17: -7359021265993317570
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_18: -7090637595478608485
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_2: 2056478603249746790
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_3: -4270879590437249590
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_4: -6228454455643547864
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_5: -6645939705286112920
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_6: 114445957905920826
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_7: 6487544524233393876
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_8: -524733244690424583
+      SpriteAtlasTexture-White_Fountain-2048x2048-fmt12_9: -3744500794528977841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

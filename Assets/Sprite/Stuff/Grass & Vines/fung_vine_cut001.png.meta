@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fung_vine_cut001_0: 1667673011062274238
+      fung_vine_cut001_1: -520724196735712592
+      fung_vine_cut001_2: -532325773715367433
+      fung_vine_cut001_3: 7845564694051690227
+      fung_vine_cut001_4: -1115003048950907660
+      fung_vine_cut001_5: -925095061276271022
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

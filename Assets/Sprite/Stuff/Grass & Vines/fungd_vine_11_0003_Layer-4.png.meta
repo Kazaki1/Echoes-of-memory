@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fungd_vine_11_0003_Layer-4_0: -2243146210508207966
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

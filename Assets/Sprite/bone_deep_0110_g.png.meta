@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bone_deep_0110_g_0: 2629097211468378808
+      bone_deep_0110_g_1: -6650500466297738825
+      bone_deep_0110_g_2: 8105880430253386742
+      bone_deep_0110_g_3: 2943005600174752690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

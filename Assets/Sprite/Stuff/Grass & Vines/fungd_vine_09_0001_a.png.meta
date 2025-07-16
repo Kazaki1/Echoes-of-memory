@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fungd_vine_09_0001_a_0: -6209447146248405137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

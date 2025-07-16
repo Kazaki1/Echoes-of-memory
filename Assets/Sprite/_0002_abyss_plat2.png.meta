@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      _0002_abyss_plat2_0: 2819813197479454200
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
