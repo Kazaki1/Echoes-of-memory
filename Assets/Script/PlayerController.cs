@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        rb.linearVelocity = new Vector2(walkSpeed * xAxis, rb.linearVelocity.y);
+        rb.velocity = new Vector2(walkSpeed * xAxis, rb.velocity.y);
     }
 
     public void TakeDamage(int damage)
@@ -284,7 +284,7 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Dashing");
         }
         rb.gravityScale = 0;
-        rb.linearVelocity = new Vector2(dashDirection * dashSpeed, 0);
+        rb.velocity = new Vector2(dashDirection * dashSpeed, 0);
 
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = gravity;
@@ -296,10 +296,10 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
         {
             pState.jumping = false;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+            rb.velocity = new Vector2(rb.velocity.x, 0);
         }
 
         if (!pState.jumping)
@@ -307,13 +307,13 @@ public class PlayerController : MonoBehaviour
             if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
             {
                 pState.jumping = true;
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
             else if (!Grounded() && hasDoubleJumpAbility && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
             {
                 pState.jumping = true;
                 airJumpCounter++;
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
+                rb.velocity = new Vector3(rb.velocity.x, jumpForce);
             }
         }
     }
@@ -388,9 +388,9 @@ public class PlayerController : MonoBehaviour
     {
         if (animator != null)
         {
-            animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));       
+            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));       
             animator.SetBool("IsGrounded", Grounded());             
-            animator.SetFloat("VelocityY", rb.linearVelocity.y);               
+            animator.SetFloat("VelocityY", rb.velocity.y);               
         }
     }
 
@@ -461,7 +461,7 @@ public class PlayerController : MonoBehaviour
 
     void HandleDownSlash()
     {
-        if (rb.linearVelocity.y < 0 && !Grounded())
+        if (rb.velocity.y < 0 && !Grounded())
         {
             if (Input.GetAxisRaw("Vertical") < 0 && Input.GetKeyDown(KeyCode.J))
             {
@@ -491,7 +491,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetAxisRaw("Vertical") < 0 &&
             Input.GetKeyDown(KeyCode.J) &&
-            rb.linearVelocity.y < 0 &&
+            rb.velocity.y < 0 &&
             Time.time - lastRecoilTime > recoilCooldown)
         {  
             Vector2 boxSize = new Vector2(recoilBoxWidth, maxCheckDistance);
@@ -501,7 +501,7 @@ public class PlayerController : MonoBehaviour
 
             if (hit != null)
             {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, recoilForce);
+                rb.velocity = new Vector2(rb.velocity.x, recoilForce);
                 lastRecoilTime = Time.time;
                 airJumpCounter = 0;
                 dashed = false; // Reset dash sau khi pogo

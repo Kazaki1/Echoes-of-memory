@@ -8,6 +8,9 @@ public class EnemyHealth : MonoBehaviour
     public HealthBar healthBar;
     public bool isDead { get; private set; } = false;
 
+    [Header("Death Settings")]
+    public string deathSceneName = "Lv1"; // 🆕
+
     void Awake()
     {
         currentHealth = maxHealth;
@@ -34,10 +37,11 @@ public class EnemyHealth : MonoBehaviour
             Die();
         }
     }
+
     public void Die()
     {
-        Debug.Log($"{gameObject.name} đã chết!");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Lv1");
+        Debug.Log($"{gameObject.name} đã chết! Chuyển đến scene: {deathSceneName}");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(deathSceneName);
         Destroy(gameObject);
     }
 }

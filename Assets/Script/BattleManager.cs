@@ -129,6 +129,11 @@ public class BattleManager : MonoBehaviour
                     current += OnEnemyAttackFinished;
                     eventField.SetValue(attackScript, current);
                 }
+                if (attackScript is LaserAttackPattern laser)
+                {
+                    laser.OnAttackFinished -= OnEnemyAttackFinished;
+                    laser.OnAttackFinished += OnEnemyAttackFinished;
+                }
             }
             enemy.StartAttack();
         }

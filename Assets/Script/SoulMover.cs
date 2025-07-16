@@ -9,7 +9,7 @@ public class SoulMover : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
-
+    public string sceneToLoadOnDeath = "Lv1";
     public HealthBar healthBar;
 
     void Start()
@@ -45,7 +45,7 @@ public class SoulMover : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = movement * moveSpeed;
+        rb.velocity = movement * moveSpeed;
     }
 
     public void TakeDamage(int damage)
@@ -73,7 +73,7 @@ public class SoulMover : MonoBehaviour
             PlayerData.Instance.currentHealth = Mathf.Max(PlayerData.Instance.currentHealth, 0);
         }
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Lv1");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoadOnDeath);
         Destroy(gameObject);
     }
 }

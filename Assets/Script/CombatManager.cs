@@ -4,20 +4,22 @@ using System.Collections;
 
 public class CombatManager : MonoBehaviour
 {
-    public PlayerController player; // Gán trong Inspector hoặc tìm tự động
+    public PlayerController player;
     private int stepsToCombat;
     private int currentStepCount = 0;
     private bool inCombat = false;
     private bool pendingTransition = false;
     private System.Random trueRandom;
 
+    [Header("Combat Scenes")]
+    public string[] combatScenes; // ✅ Gán trong Inspector
+
     void Start()
     {
-        trueRandom = new System.Random(); // dùng thời gian hệ thống làm seed
+        trueRandom = new System.Random();
         ResetStepCounter();
     }
 
-    // Gọi hàm này mỗi khi player di chuyển một bước
     public void OnPlayerStep()
     {
         if (inCombat) return;
@@ -41,7 +43,6 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    // Gọi hàm này từ PlayerController khi player vừa chạm đất
     public void NotifyPlayerGrounded()
     {
         if (pendingTransition && !inCombat)
@@ -59,8 +60,8 @@ public class CombatManager : MonoBehaviour
             SpriteRenderer sr = player.GetComponent<SpriteRenderer>();
             if (sr != null)
             {
-                float duration = 1.0f; // tổng thời gian nhấp nháy
-                float interval = 0.1f; // thời gian tắt/mở mỗi lần
+                float duration = 1.0f;
+                float interval = 0.1f;
                 float timer = 0f;
                 while (timer < duration)
                 {
@@ -77,13 +78,17 @@ public class CombatManager : MonoBehaviour
     void StartCombat()
     {
         Debug.Log("Combat started! Switching scene...");
-        // Random scene name
-        string[] scenes = { "BattleScene1", "BattleScene2" };
-        string chosenScene = scenes[Random.Range(0, scenes.Length)];
-        SceneManager.LoadScene(chosenScene);
+        if (combatScenes != null && combatScenes.Length > 0)
+        {
+            string chosenScene = combatScenes[Random.Range(0, combatScenes.Length)];
+            SceneManager.LoadScene(chosenScene);
+        }
+        else
+        {
+            Debug.LogError("❌ Không có combat scene nào được gán trong Inspector!");
+        }
     }
 
-    // Gọi hàm này khi combat kết thúc
     public void OnCombatEnd()
     {
         inCombat = false;
@@ -94,7 +99,7 @@ public class CombatManager : MonoBehaviour
 
     void ResetStepCounter()
     {
-        stepsToCombat = trueRandom.Next(100, 200); 
+        stepsToCombat = trueRandom.Next(100, 200);
         currentStepCount = 0;
         Debug.Log($"Steps to next combat: {stepsToCombat}");
     }
