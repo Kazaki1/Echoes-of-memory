@@ -1,0 +1,163 @@
+[
+  {
+    "speaker": "Bạn",
+    "text": "Ugh... Đầu mình... đau quá...",
+    "background": "ALYiiE_0",
+    "character": ""
+  },
+  {
+    "speaker": "Bạn",
+    "text": "...Cái gì vậy...? Lạnh quá... Tôi đang... nằm trên sàn sao?",
+    "background": "ALYiiE_0",
+    "character": ""
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Đây là đâu...? Tại sao mình không nhớ gì cả...",
+    "background": "ALYiiE_0",
+    "character": ""
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Ughhhh...",
+    "background": "ALYiiE_0",
+    "character": ""
+  },
+  {
+    "speaker": "Alice",
+    "text": "Chào anh, #######. Cuối cùng thì anh cũng đã tỉnh dậy sau một giấc ngủ dài.",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Cô là ai? Đây là nơi quái quỷ nào vậy?!",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Anh lại quên mất mọi thứ rồi... như mọi lần thôi. Em là Alice. Người được tạo ra để dẫn đường cho anh.",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Cô đang nói cái quái gì vậy? Dẫn đường ?",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Đúng vậy, dẫn đường, em sẽ dẫn anh đến với con đường mà anh chọn.",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Ý cô là sao ? Con đường nào, tôi chỉ thấy cái hang động tối tăm này thôi",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Em sẽ dẫn anh đi trên con đường đến với sự thật... hoặc ít nhất là thứ gì đó *gần giống* với sự thật.",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Hả? Ý cô là sao?",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Không sao đâu. Em không mong anh hiểu ngay lúc này.",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Nhưng nếu anh thực sự muốn tìm lại bản thân... thì hãy theo em.",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Chờ đã... Tôi vẫn chưa hiểu gì cả...",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Để hiểu được một cơn ác mộng... anh cần phải bước sâu vào trong nó.",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Cánh cửa kia... là nơi mọi thứ bắt đầu.",
+    "background": "ALYiiE_0",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Ồ, có vẻ như là đã đến lúc rồi, em đi trước đây. Em sẽ chờ anh ngay sau thử thách đầu tiên.",
+    "background": "ALYiiE_0",
+    "character": "Alice_0",
+    "choices": [
+      {
+        "text": "Đi qua cánh cửa",
+        "nextIndex": 18
+      },
+      {
+        "text": "Không đi",
+        "nextIndex": 19
+      }
+    ]
+  },
+  {
+    "speaker": "Bạn",
+    "text": "(Có lẽ mình nên bước qua cánh cửa... dù không biết điều gì đang chờ đợi phía sau...)",
+    "background": "ALYiiE_0",
+    "character": "",
+    "action": "Go"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "(Không... mình không thể tin bất kỳ ai ngay lúc này. Ai biết được cánh cửa bên kia có gì.)",
+    "background": "dark_cave",
+    "character": ""
+  },
+  {
+    "speaker": "Bạn",
+    "text": "....",
+    "background": "dark_cave",
+    "character": ""
+  },
+  {
+    "speaker": "Bạn",
+    "text": ".........",
+    "background": "dark_cave",
+    "character": ""
+  },
+  {
+    "speaker": "Alice",
+    "text": "Vậy à, thì ra đó là lựa chọn của anh",
+    "background": "",
+    "character": ""
+  },
+  {
+    "speaker": "Alice",
+    "text": "Có chút thất vọng đấy, nhưng với những gì anh đã trải qua thì đó cũng là điều dễ hiểu.",
+    "background": "",
+    "character": ""
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Vậy thì có lẽ chúng ta nên tạm biệt ở đây thôi nhỉ, PLAYER.",
+    "background": "",
+    "character": ""
+  }
+]

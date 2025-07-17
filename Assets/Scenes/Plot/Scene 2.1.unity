@@ -325,7 +325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 437.64, y: -26.739}
+  m_AnchoredPosition: {x: 443.80005, y: -26.739}
   m_SizeDelta: {x: 875.29, y: 53.478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301123595
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 9049539159198059528, guid: 65cb1a0af0a567e47872fc6141f8b73d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -878,7 +878,7 @@ MonoBehaviour:
   character: {fileID: 1096210387}
   choicePanel: {fileID: 1409519367}
   choiceButtonPrefab: {fileID: 4557150521789107830, guid: b30ffca3deaab34458a9392d94d663eb, type: 3}
-  jsonFileName: dialogue
+  jsonFileName: 2.1
 --- !u!1 &1797571696
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,8 +913,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 443.8, y: 24.23}
-  m_SizeDelta: {x: 887.6, y: 48.461}
+  m_AnchoredPosition: {x: 449.00006, y: 24.23}
+  m_SizeDelta: {x: 877.2, y: 48.461}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797571698
 MonoBehaviour:

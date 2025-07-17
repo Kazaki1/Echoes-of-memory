@@ -1,0 +1,80 @@
+[
+  {
+    "speaker": "Bạn",
+    "text": "…Haa… Cuối cùng cũng kết thúc.",
+    "background": "",
+    "character": "Player_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Anh trông ổn đấy, dù có hơi... dính máu một chút.",
+    "background": "",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Đừng giả vờ quan tâm. Cô thấy rồi đấy, không còn cách nào khác ngoài việc xử lý nó.",
+    "background": "",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Không còn cách nào khác… Phải rồi. Anh luôn chọn giải pháp nhanh nhất.",
+    "background": "",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Cô đang trách tôi à? Nó không phải người.",
+    "background": "",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Em không trách... Chỉ là hơi tiếc. Có lẽ… anh của lần trước đã không làm thế.",
+    "background": "",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "\"Lần trước\"? Cô lại bắt đầu nói mấy thứ khó hiểu nữa rồi đấy.",
+    "background": "",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Có lẽ là em lỡ lời thôi. Dù sao thì... anh cũng đã nhớ được gì đó rồi nhỉ?",
+    "background": "",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "...Một giấc mơ. Về một hiệp sĩ. Tôi đứng giữa hàng trăm xác người... tay cầm kiếm.",
+    "background": "Memory_Flashback_Silhouettes",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "…Em hiểu rồi.",
+    "background": "",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Thật chứ?",
+    "background": "",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Không, em không hiểu. Và có thể… chính anh cũng chưa hiểu. Nhưng sớm thôi.",
+    "background": "",
+    "character": "Alice_0"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Em phải đi rồi. Hẹn gặp lại anh – nếu còn là anh.",
+    "background": "",
+    "character": "Alice_0"
+  }
+]
