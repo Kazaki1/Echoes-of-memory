@@ -5,15 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Plot/Scene 1.unity
-    guid: 7044c0597dcdbf24c95389b46115a617
-  - enabled: 1
-    path: Assets/Scenes/Lv1.unity
-    guid: bb7b69d59a8701b44974da68d2074181
+    path: Assets/Scenes/Menu.unity
+    guid: be6eef25f40348d4ca886caac0c68a87
   - enabled: 1
     path: Assets/Scenes/Battle/BattleScene1.unity
     guid: a3053b967c30e9049af52d6be4120441
@@ -24,8 +18,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Battle/BattleScene3.unity
     guid: 554ee77a89e0a084dbd6ff8cd5601fad
   - enabled: 1
+    path: Assets/Scenes/Battle/BattleScene4.unity
+    guid: 3403053c16abae74185652de7ba24efb
+  - enabled: 1
+    path: Assets/Scenes/Battle/BattleScene5.unity
+    guid: 6cdd99703b6a31f4db5f5587200b2fd9
+  - enabled: 1
+    path: Assets/Scenes/Battle/BattleScene6.unity
+    guid: 99c2f7da69fd9ea4a9e0c9a5f4c0e7f2
+  - enabled: 1
+    path: Assets/Scenes/Lv1.unity
+    guid: bb7b69d59a8701b44974da68d2074181
+  - enabled: 1
     path: Assets/Scenes/Lv2.unity
     guid: 50a97808271efb64d8621d264063aef0
+  - enabled: 1
+    path: Assets/Scenes/Lv3.unity
+    guid: ca735f0e27122244e9516b310b195d6f
   - enabled: 1
     path: Assets/Scenes/Lv4.unity
     guid: 53e127c623788b540bacf6096f40185e
@@ -33,11 +42,86 @@ EditorBuildSettings:
     path: Assets/Scenes/Lv5.unity
     guid: d4faa570d69ee274c8574c1aa4970efc
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 7005a8c1646af7449b04651b8fb90319
+    path: Assets/Scenes/BossFight/Boss1.unity
+    guid: b27e6b8a346e9e64dabd551948e97ffd
   - enabled: 1
-    path: Assets/Scenes/Lv3.unity
-    guid: ca735f0e27122244e9516b310b195d6f
+    path: Assets/Scenes/BossFight/Boss2.unity
+    guid: da076f05fbe444046b969221e63f438c
+  - enabled: 1
+    path: Assets/Scenes/BossFight/Boss3.unity
+    guid: f13493b169d767d4f9f54bc77a75c732
+  - enabled: 1
+    path: Assets/Scenes/BossFight/Boss4.unity
+    guid: cd3c0864f62937743ade6568bad907a6
+  - enabled: 1
+    path: Assets/Scenes/BossFight/Boss5.unity
+    guid: 7aa1bd3b38fe04b4a84865dd29e92d98
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 1.unity
+    guid: 177ea1100664b404aab078b0442d2629
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 1.1.unity
+    guid: 570a2a2264394594ba1e7edd4be725ed
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 1.2.unity
+    guid: 22f0e5864d1367b4c9aa6ce3583abbd2
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 1.3.unity
+    guid: 997570221943f9845b4a6b8e7bc1bd3d
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 2.1.unity
+    guid: 7d76a2bfeb8fc1f418dafc40e7a1582b
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 2.2.unity
+    guid: 3e425465abd76c2448cf2856d86e0cc2
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 2.3.unity
+    guid: 8e8e90e88390699438137e6e44f01dcd
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 3.1.unity
+    guid: 8d80bd93754e1804ab65ba50f806e061
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 3.2.unity
+    guid: c7a01630a4b8a204a990cc16cb53bbe0
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 3.3.unity
+    guid: b9de80645977ec544a8f5d6a200b3930
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 4.1.unity
+    guid: c8f159669ca1f0c43afd028f6440039d
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 4.2.unity
+    guid: 3d2ab36fc530c0241ac33967058ef5ab
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 4.3.unity
+    guid: 16db3d21df48bd146814afb28169f46c
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 6.1.unity
+    guid: 19ef4435e8616be47ab19d8cf2411cfd
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 6.2.unity
+    guid: eaf2fb5d10790484eab2aad89365548d
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 6.3.unity
+    guid: b1361f601e204ba4385bd2f770bd51bf
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 7.1.unity
+    guid: c35c8f12f711b22419f7b9e0b92961f5
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 7.2.unity
+    guid: 3913d00ed36b43c448a531cd8220ed0f
+  - enabled: 1
+    path: Assets/Scenes/Plot/Scene 7.3.unity
+    guid: 21056c9bbe3ecc24f89781b3252d7004
+  - enabled: 1
+    path: Assets/Scenes/Ending 1.unity
+    guid: 00e40feae90133442b0432f73428b266
+  - enabled: 1
+    path: Assets/Scenes/Ending 2.unity
+    guid: bf9d0dc94f6184c449b2201650d53150
+  - enabled: 1
+    path: Assets/Scenes/Ending 3.unity
+    guid: b947ac679d27b0345b781ee36c037d7b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

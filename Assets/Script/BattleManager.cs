@@ -19,7 +19,7 @@ public class BattleManager : MonoBehaviour
     public EnemyHealth enemyHealth;
     public int playerAttackDamage = 100;
     public string mercySceneName = "PeaceEnding";
-
+    private bool hasAddedGuiltyPoint = false;
     private bool isFightBarActive = false;
     private FightbarController fightbarController; 
     public BattleState state = BattleState.PlayerTurn;
@@ -81,11 +81,7 @@ public class BattleManager : MonoBehaviour
         if (soul != null) soul.SetActive(false);
 
         isFightBarActive = false;
-        if (RouteManager.Instance != null)
-        {
-            RouteManager.Instance.guiltyPoint++;
-            Debug.Log("🔺 Guilty Point hiện tại: " + RouteManager.Instance.guiltyPoint);
-        }
+
     }
 
     public void OnPlayerChooseFight()
@@ -101,9 +97,12 @@ public class BattleManager : MonoBehaviour
 
         isFightBarActive = true;
 
+        if (!hasAddedGuiltyPoint && RouteManager.Instance != null)
+        {
+            RouteManager.Instance.AddGuiltyPoint();
+            hasAddedGuiltyPoint = true;
+        }
     }
-
-    // Callback khi player dừng fightbar
     void OnPlayerStopFilling(float damageMultiplier)
     {
         Debug.Log($"💥 Player stops at multiplier: {damageMultiplier:P}");

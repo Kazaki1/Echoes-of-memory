@@ -2,73 +2,74 @@
   {
     "speaker": "Bạn",
     "text": "Ugh... Cuối cùng cũng qua được",
-    "background": "",
+    "background": "ALYiiE_0",
     "character": ""
   },
   {
     "speaker": "Alice",
     "text": "Oh, chúc mừng anh. Có vẻ như anh đã vượt qua được thử thách rồi nhỉ.",
-    "background": "",
+    "background": "ALYiiE_0",
     "character": "Alice_0"
   },
   {
     "speaker": "Alice",
-    "text": "Oh, có vẻ như anh vẫn để nó sống?",
-    "background": "",
+    "text": "Và có vẻ như anh vẫn để nó sống?",
+    "background": "ALYiiE_0",
     "character": "Alice_0"
   },
   {
     "speaker": "Bạn",
     "text": "Ý cô là tôi phải giết thứ đó?",
-    "background": "",
+    "background": "ALYiiE_0",
     "character": "Alice_0"
   },
   {
     "speaker": "Alice",
     "text": "Không, không phải vậy. Em thấy khá vui khi anh vẫn giống lần trước thôi.",
-    "background": "",
+    "background": "ALYiiE_0",
     "character": "Alice_0"
   },
   {
     "speaker": "Bạn",
     "text": "Lần trước? Ý cô là sao?",
-    "background": "",
+    "background": "ALYiiE_0",
     "character": "Alice_0"
   },
   {
     "speaker": "Alice",
-    "text": "Ồ, có vẻ như em nói hơi nhiều rồi. Bỏ chuyện đó qua một bên, có vẻ như anh đã lấy lại được một phần ký ức rồi nhỉ.",
-    "background": "",
+    "text": "Có vẻ như em nói hơi nhiều rồi. Bỏ chuyện đó qua một bên, có vẻ như anh đã lấy lại được một phần ký ức rồi nhỉ.",
+    "background": "ALYiiE_0",
     "character": "Alice_0"
   },
   {
     "speaker": "Bạn",
     "text": "Ký ức?... Cô nói như thể cô biết về giấc mơ của tôi ấy nhỉ.",
-    "background": "",
+    "background": "ALYiiE_0",
     "character": "Alice_0"
   },
   {
     "speaker": "Alice",
     "text": "Không, em không biết. Với mỗi lần thử thì giấc mơ của anh đều khác nhau.",
-    "background": "",
+    "background": "ALYiiE_0",
     "character": "Alice_0"
   },
   {
     "speaker": "Alice",
-    "text": "Mà giấc mơ của anh là về gì thế?",
-    "background": "",
+    "text": "Vậy giấc mơ của anh là về gì thế?",
+    "background": "ALYiiE_0",
     "character": "Alice_0"
   },
   {
     "speaker": "Bạn",
     "text": "Một hiệp sĩ chăng?",
-    "background": "",
+    "background": "ALYiiE_0",
     "character": "Alice_0"
   },
   {
     "speaker": "Alice",
-    "text": "Ra là thế… Ồ, có lẽ đã đến lúc em đi rồi. Chúc anh may mắn.",
-    "background": "",
-    "character": "Alice_0"
+    "text": "Ra là thế… Có lẽ đã đến lúc em đi rồi. Chúc anh may mắn.",
+    "background": "ALYiiE_0",
+    "character": "Alice_0",
+    "action": "Lv2"
   }
 ]

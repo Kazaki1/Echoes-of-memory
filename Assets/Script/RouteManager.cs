@@ -1,22 +1,26 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RouteManager : MonoBehaviour
 {
-    public static RouteManager Instance;
+    public static RouteManager Instance { get; private set; }
 
     public int guiltyPoint = 0;
-    public int sparedEnemies = 0;
-    public string currentRoute = "Neutral";
+
     private void Awake()
     {
-        if (Instance == null)
+
+        if (Instance != null && Instance != this)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); 
+            Destroy(gameObject);
+            return;
         }
-        else
-        {
-            Destroy(gameObject); 
-        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void AddGuiltyPoint(int amount = 1)
+    {
+        guiltyPoint += amount;
+        Debug.Log($"⚖️ Guilty Point increased: {guiltyPoint}");
     }
 }

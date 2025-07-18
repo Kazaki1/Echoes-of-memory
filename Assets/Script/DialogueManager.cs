@@ -11,7 +11,7 @@ public class Choice
 {
     public string text;
     public int nextIndex;
-    public string action; // Action khi nhấn lựa chọn
+    public string action;
 }
 
 [System.Serializable]
@@ -22,7 +22,7 @@ public class DialogueLine
     public string background;
     public string character;
     public List<Choice> choices;
-    public string action; // Action riêng của câu thoại
+    public string action;
 }
 
 public class DialogueManager : MonoBehaviour
@@ -56,7 +56,6 @@ public class DialogueManager : MonoBehaviour
         {
             if (choicePanel.activeSelf) return;
 
-            // Nếu đang chờ thực thi action sau đoạn thoại
             if (!string.IsNullOrEmpty(pendingAction))
             {
                 PerformAction(pendingAction);
@@ -66,7 +65,9 @@ public class DialogueManager : MonoBehaviour
 
             index++;
             if (index < lines.Count)
+            {
                 ShowLine();
+            }
         }
     }
 
@@ -95,15 +96,46 @@ public class DialogueManager : MonoBehaviour
             return;
 
         var line = lines[index];
+
         speakerText.text = line.speaker;
         dialogueText.text = line.text;
 
-        background.sprite = Resources.Load<Sprite>("Backgrounds/" + line.background);
+
+        if (!string.IsNullOrEmpty(line.background))
+        {
+            Sprite bgSprite = Resources.Load<Sprite>("Backgrounds/" + line.background);
+            if (bgSprite != null)
+                background.sprite = bgSprite;
+        }
 
         if (!string.IsNullOrEmpty(line.character))
         {
-            character.sprite = Resources.Load<Sprite>("Characters/" + line.character);
-            SetCharacterAlpha(1f);
+            Sprite charSprite = Resources.Load<Sprite>("Characters/" + line.character);
+            if (charSprite != null)
+            {
+                character.sprite = charSprite;
+                character.SetNativeSize();
+
+                float maxSize = 200f;
+                float width = character.rectTransform.sizeDelta.x;
+                float height = character.rectTransform.sizeDelta.y;
+                float scaleFactor = 1f;
+
+                if (width > height && width > maxSize)
+                    scaleFactor = maxSize / width;
+                else if (height > width && height > maxSize)
+                    scaleFactor = maxSize / height;
+                else if (height == width && height > maxSize)
+                    scaleFactor = maxSize / height;
+
+                character.rectTransform.sizeDelta = new Vector2(width * scaleFactor, height * scaleFactor);
+                SetCharacterAlpha(1f);
+            }
+            else
+            {
+                character.sprite = null;
+                SetCharacterAlpha(0f);
+            }
         }
         else
         {
@@ -111,10 +143,10 @@ public class DialogueManager : MonoBehaviour
             SetCharacterAlpha(0f);
         }
 
-        // Nếu có action, lưu để thực hiện sau khi click chuột
+
         pendingAction = string.IsNullOrEmpty(line.action) ? null : line.action;
 
-        // Hiển thị lựa chọn nếu có
+
         if (line.choices != null && line.choices.Count > 0)
         {
             ShowChoices(line.choices);
@@ -134,6 +166,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         choicePanel.SetActive(true);
+
 
         foreach (Transform child in choicePanel.transform)
             Destroy(child.gameObject);
@@ -168,13 +201,40 @@ public class DialogueManager : MonoBehaviour
 
     void PerformAction(string action)
     {
+        Debug.Log("Thực hiện hành động: " + action);
+
         switch (action)
         {
+            case "Stay":
+                SceneManager.LoadScene("Menu");
+                break;
             case "Go":
-                Debug.Log("Chuyển cảnh đến Lv1");
                 SceneManager.LoadScene("Lv1");
                 break;
-
+            case "Lv2":
+                SceneManager.LoadScene("Lv2");
+                break;
+            case "Lv3":
+                SceneManager.LoadScene("Lv3");
+                break;
+            case "Lv4":
+                SceneManager.LoadScene("Lv4");
+                break;
+            case "Lv5":
+                SceneManager.LoadScene("Lv5");
+                break;
+            case "Alice":
+                SceneManager.LoadScene("Boss5");
+                break;
+            case "LoadEnding1":
+                SceneManager.LoadScene("Ending 1");
+                break;
+            case "LoadEnding2":
+                SceneManager.LoadScene("Ending 2");
+                break;
+            case "LoadEnding3":
+                SceneManager.LoadScene("Ending 3");
+                break;
             default:
                 Debug.LogWarning("Không rõ hành động: " + action);
                 break;

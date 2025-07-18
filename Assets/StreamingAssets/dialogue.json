@@ -127,37 +127,38 @@
   {
     "speaker": "Bạn",
     "text": "(Không... mình không thể tin bất kỳ ai ngay lúc này. Ai biết được cánh cửa bên kia có gì.)",
-    "background": "dark_cave",
+    "background": "ALYiiE_0",
     "character": ""
   },
   {
     "speaker": "Bạn",
     "text": "....",
-    "background": "dark_cave",
+    "background": "ALYiiE_0",
     "character": ""
   },
   {
     "speaker": "Bạn",
     "text": ".........",
-    "background": "dark_cave",
+    "background": "ALYiiE_0",
     "character": ""
   },
   {
     "speaker": "Alice",
     "text": "Vậy à, thì ra đó là lựa chọn của anh",
-    "background": "",
+    "background": "ALYiiE_0",
     "character": ""
   },
   {
     "speaker": "Alice",
     "text": "Có chút thất vọng đấy, nhưng với những gì anh đã trải qua thì đó cũng là điều dễ hiểu.",
-    "background": "",
+    "background": "ALYiiE_0",
     "character": ""
   },
   {
-    "speaker": "Bạn",
+    "speaker": "Alice",
     "text": "Vậy thì có lẽ chúng ta nên tạm biệt ở đây thôi nhỉ, PLAYER.",
-    "background": "",
-    "character": ""
+    "background": "ALYiiE_0",
+    "character": "",
+    "action": "Stay"
   }
 ]

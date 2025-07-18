@@ -3163,7 +3163,11 @@ MonoBehaviour:
   maxHealth: 80
   currentHealth: 0
   healthBar: {fileID: 1317922737}
-  deathSceneName: Lv2
+  guiltyThresholdA: 0
+  guiltyThresholdB: 0
+  sceneA: Lv2
+  sceneB: Lv2
+  sceneC: Lv2
 --- !u!1 &2056861454
 GameObject:
   m_ObjectHideFlags: 0

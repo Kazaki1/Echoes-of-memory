@@ -1,0 +1,122 @@
+[
+  {
+    "speaker": "Alice",
+    "text": "Chắc… đây là lần cuối em nhìn thấy anh… như chính anh.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Nếu biết trước điều này, tại sao còn để mọi chuyện đi xa đến thế?",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Vì em… không thể phủ nhận cảm xúc của mình. Dù là một chương trình, hay một con người… em vẫn… yêu anh.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Tất cả giờ… tùy thuộc vào anh.\nGiết em… giữ lại em… hay rời khỏi tất cả.\nDù chọn gì… xin hãy… là chính mình.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1",
+    "choices": [
+      {
+        "text": "Không giết Alice",
+        "nextIndex": 4
+      }
+    ]
+  },
+  {
+    "speaker": "Bạn",
+    "text": "Tôi… không thể xuống tay với em.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Dù vậy… anh vẫn phải đưa ra lựa chọn cuối cùng.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Cho em biết đi, PLAYER, quyết định của anh sẽ là gì?",
+    "background": "ALYiiE_0",
+    "character": "Alice_1",
+    "choices": [
+      {
+        "text": "Buông bỏ thế giới",
+        "nextIndex": 7
+      },
+      {
+        "text": "Ở lại với Alice",
+        "nextIndex": 12
+      }
+    ]
+  },
+  {
+    "speaker": "Player",
+    "text": "Cả hai chúng ta đều đã chịu đựng đủ đau khổ rồi nhỉ...",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Player",
+    "text": "Nếu em muốn kết thúc tất cả… thì cứ làm đi.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Anh sẽ… để em phá hủy thế giới này?",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Player",
+    "text": "Tôi mệt mỏi rồi. Nếu đó là điều em mong muốn… thì hãy kết thúc nó.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Cảm ơn… vì đã để em được tự do.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1",
+    "action": "LoadEnding2"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Em không muốn phá hủy thế giới này nữa. Em chỉ… mệt quá rồi.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Player",
+    "text": "Tôi cũng vậy. Nếu không còn gì ngoài đau khổ… thì chúng ta không cần phải tiếp tục.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Alice",
+    "text": "…Nhưng nếu ở lại… anh sẽ quên tất cả.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Player",
+    "text": "Vậy thì hãy quên hết. Bắt đầu lại – như thể chúng ta chưa từng phải chiến đấu.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1"
+  },
+  {
+    "speaker": "Alice",
+    "text": "Nếu có một khởi đầu khác… em muốn được gặp anh lần nữa. Dù chỉ là người xa lạ.",
+    "background": "ALYiiE_0",
+    "character": "Alice_1",
+    "action": "LoadEnding3"
+  }
+]

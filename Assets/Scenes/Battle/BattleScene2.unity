@@ -1721,7 +1721,11 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   healthBar: {fileID: 680952033}
-  deathSceneName: Lv1
+  guiltyThresholdA: 0
+  guiltyThresholdB: 0
+  sceneA: Lv1
+  sceneB: Lv1
+  sceneC: Lv1
 --- !u!4 &1184451030
 Transform:
   m_ObjectHideFlags: 0
