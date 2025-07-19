@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
             SoulMover player = other.GetComponent<SoulMover>();
             if (player != null)
             {
-                player.TakeDamage(10); // Số damage có thể chỉnh tùy ý
+                player.TakeDamage(7); // Số damage có thể chỉnh tùy ý
             }
             Destroy(gameObject); // Hủy viên đạn sau khi trúng
         }

@@ -29,7 +29,16 @@ public class LaserAndBulletHellPattern2 : EnemyAttackBase
     private float currentAngle = 0f;
     private int fireCount = 0;
     private bool attacking = false;
-
+    private void Awake()
+    {
+        // Nếu bị mất tham chiếu, tự động gán lại từ Resources (nếu có)
+        if (bulletPrefab == null)
+        {
+            bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
+            if (bulletPrefab == null)
+                Debug.LogError("❌ Không tìm thấy bulletPrefab trong Resources.");
+        }
+    }
     public override void StartAttack()
     {
         if (attacking) return;

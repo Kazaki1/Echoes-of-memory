@@ -1,29 +1,72 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Checkpoint : MonoBehaviour
 {
-    private static Checkpoint currentActiveCheckpoint; // Checkpoint được kích hoạt gần nhất
+    private static Checkpoint currentActiveCheckpoint;
     private SpriteRenderer sr;
-    private bool playerInRange = false; // Kiểm tra player có trong vùng checkpoint không
-    private PlayerController nearbyPlayer; // Reference đến player gần checkpoint
+    private bool playerInRange = false;
+    private PlayerController nearbyPlayer;
 
     [Header("Visual Settings")]
     public Color defaultColor = Color.white;
-    public Color highlightColor = Color.yellow; 
-    public Color activeColor = Color.green; // Màu khi checkpoint được kích hoạt
+    public Color highlightColor = Color.yellow;
+    public Color activeColor = Color.green;
 
+    [Header("Checkpoint Settings")]
+    public bool isDefaultCheckpoint = false;
+
+    // 🟢 THÊM BIẾN STATIC ĐỂ THEO DÕI VIỆC TELEPORT
+    private static string lastTeleportedScene = "";
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        if (sr != null)
-            sr.color = defaultColor;
+        if (sr != null) sr.color = defaultColor;
 
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (PlayerPrefs.HasKey("CheckpointScene"))
+        {
+            string savedScene = PlayerPrefs.GetString("CheckpointScene");
+            float savedX = PlayerPrefs.GetFloat("CheckpointX");
+            float savedY = PlayerPrefs.GetFloat("CheckpointY");
+
+            if (savedScene == currentScene &&
+                Vector2.Distance(new Vector2(savedX, savedY), (Vector2)transform.position) < 0.1f)
+            {
+                sr.color = activeColor;
+                currentActiveCheckpoint = this;
+            }
+
+            // 🔥 Chỉ dịch chuyển nếu chưa teleport trong scene này
+            if (lastTeleportedScene != currentScene)
+            {
+                StartCoroutine(WaitAndTeleportPlayer());
+                lastTeleportedScene = currentScene;
+                Debug.Log("🚀 Đã đánh dấu scene " + currentScene + " đã teleport");
+            }
+        }
+        else if (isDefaultCheckpoint)
+        {
+            PlayerData.Instance?.SaveCheckpoint(transform.position);
+            sr.color = activeColor;
+            currentActiveCheckpoint = this;
+
+            Debug.Log("⚡ Checkpoint mặc định được lưu: " + transform.position);
+
+            // 🔥 Chỉ dịch chuyển nếu chưa teleport trong scene này
+            if (lastTeleportedScene != currentScene)
+            {
+                StartCoroutine(WaitAndTeleportPlayer());
+                lastTeleportedScene = currentScene;
+                Debug.Log("🚀 Đã đánh dấu scene " + currentScene + " đã teleport (default)");
+            }
+        }
     }
 
     private void Update()
     {
-        // Kiểm tra input khi player ở gần
         if (playerInRange && nearbyPlayer != null && Input.GetKeyDown(KeyCode.E))
         {
             ActivateCheckpoint();
@@ -37,16 +80,13 @@ public class Checkpoint : MonoBehaviour
         PlayerController player = other.GetComponent<PlayerController>();
         if (player == null) return;
 
-        // Player vào vùng checkpoint
         playerInRange = true;
         nearbyPlayer = player;
 
-        // Chỉ highlight nếu chưa được kích hoạt
         if (currentActiveCheckpoint != this)
         {
             sr.color = highlightColor;
         }
-        Debug.Log("Press E to activate checkpoint");
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -66,22 +106,19 @@ public class Checkpoint : MonoBehaviour
     {
         if (nearbyPlayer == null) return;
 
-        // Lưu checkpoint position
         nearbyPlayer.SetCheckpoint(transform.position);
 
-        // Reset checkpoint cũ
         if (currentActiveCheckpoint != null && currentActiveCheckpoint != this)
         {
             currentActiveCheckpoint.ResetColor();
         }
 
-        // Kích hoạt checkpoint mới
         sr.color = activeColor;
         currentActiveCheckpoint = this;
 
-        Debug.Log("Checkpoint activated and saved!");
+        PlayerData.Instance?.SaveCheckpoint(transform.position);
 
-        // Có thể thêm hiệu ứng âm thanh hoặc particle ở đây
+        Debug.Log("✅ Checkpoint được kích hoạt: " + transform.position);
         PlayActivationEffect();
     }
 
@@ -100,29 +137,63 @@ public class Checkpoint : MonoBehaviour
     {
         Vector3 originalScale = transform.localScale;
         Vector3 targetScale = originalScale * 1.2f;
-
-        // Scale up
-        float elapsed = 0f;
         float duration = 0.1f;
+        float elapsed = 0f;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            float t = elapsed / duration;
-            transform.localScale = Vector3.Lerp(originalScale, targetScale, t);
+            transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsed / duration);
             yield return null;
         }
 
-        // Scale down
         elapsed = 0f;
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            float t = elapsed / duration;
-            transform.localScale = Vector3.Lerp(targetScale, originalScale, t);
+            transform.localScale = Vector3.Lerp(targetScale, originalScale, elapsed / duration);
             yield return null;
         }
 
         transform.localScale = originalScale;
+    }
+
+    public static void TeleportPlayerToCheckpointIfExists(GameObject playerObj)
+    {
+        if (PlayerData.Instance != null)
+        {
+            playerObj.transform.position = PlayerData.Instance.checkpointPosition;
+            Debug.Log("🧍 Player đã dịch chuyển tới vị trí: " + playerObj.transform.position);
+        }
+    }
+
+    public static Checkpoint FindDefaultCheckpoint()
+    {
+        Checkpoint[] all = GameObject.FindObjectsByType<Checkpoint>(FindObjectsSortMode.None);
+        foreach (var cp in all)
+        {
+            if (cp.isDefaultCheckpoint)
+                return cp;
+        }
+        return null;
+    }
+
+    // 🟢 THÊM HÀM ĐỂ RESET TRẠNG THÁI TELEPORT (gọi khi chuyển scene)
+    public static void ResetTeleportState()
+    {
+        lastTeleportedScene = "";
+        Debug.Log("🔄 Đã reset trạng thái teleport");
+    }
+
+    private System.Collections.IEnumerator WaitAndTeleportPlayer()
+    {
+        yield return null;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            player.transform.position = PlayerData.Instance.checkpointPosition;
+            Debug.Log("🚀 Checkpoint.cs đã dịch chuyển Player đến: " + player.transform.position);
+        }
     }
 }

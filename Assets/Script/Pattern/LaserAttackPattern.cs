@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserAttackPattern : EnemyAttackBase
@@ -14,8 +15,11 @@ public class LaserAttackPattern : EnemyAttackBase
     public float attackInterval = 2f;
     public int maxAttacks = 3;
 
+    [Header("Laser Settings")]
+    public int lasersPerAttack = 2; // ✅ Số lượng laser mỗi lần tấn công
+
     [Header("Laser Spawn Positions")]
-    public Transform[] firePositions; // Ba vị trí Top, Mid, Bottom
+    public Transform[] firePositions;
 
     public Action OnAttackFinished;
 
@@ -36,7 +40,7 @@ public class LaserAttackPattern : EnemyAttackBase
         attacking = false;
         StopAllCoroutines();
 
-        OnAttackFinished?.Invoke(); // Báo BattleManager kết thúc lượt
+        OnAttackFinished?.Invoke();
     }
 
     private IEnumerator AttackLoop()
@@ -45,37 +49,60 @@ public class LaserAttackPattern : EnemyAttackBase
 
         while (attacking && attackCount < maxAttacks)
         {
-            // Random 2 vị trí khác nhau
-            int index1 = UnityEngine.Random.Range(0, firePositions.Length);
-            int index2;
-            do
+            // ✅ Chọn vị trí ngẫu nhiên không trùng lặp
+            List<int> selectedIndices = GetUniqueRandomIndices(lasersPerAttack, firePositions.Length);
+            List<GameObject> warnings = new List<GameObject>();
+            List<GameObject> lasers = new List<GameObject>();
+
+            // Hiện cảnh báo
+            foreach (int index in selectedIndices)
             {
-                index2 = UnityEngine.Random.Range(0, firePositions.Length);
-            } while (index2 == index1);
+                Vector3 pos = firePositions[index].position;
+                GameObject warning = Instantiate(warningLaserPrefab, pos, Quaternion.identity, transform);
+                warnings.Add(warning);
+            }
 
-            Vector3 pos1 = firePositions[index1].position;
-            Vector3 pos2 = firePositions[index2].position;
-
-            // Cảnh báo laser
-            GameObject warning1 = Instantiate(warningLaserPrefab, pos1, Quaternion.identity, transform);
-            GameObject warning2 = Instantiate(warningLaserPrefab, pos2, Quaternion.identity, transform);
             yield return new WaitForSeconds(warningTime);
 
-            Destroy(warning1);
-            Destroy(warning2);
+            // Xóa cảnh báo
+            foreach (GameObject warning in warnings)
+                Destroy(warning);
 
             // Bắn laser
-            GameObject laser1 = Instantiate(laserPrefab, pos1, Quaternion.identity, transform);
-            GameObject laser2 = Instantiate(laserPrefab, pos2, Quaternion.identity, transform);
+            foreach (int index in selectedIndices)
+            {
+                Vector3 pos = firePositions[index].position;
+                GameObject laser = Instantiate(laserPrefab, pos, Quaternion.identity, transform);
+                lasers.Add(laser);
+            }
+
             yield return new WaitForSeconds(laserDuration);
 
-            Destroy(laser1);
-            Destroy(laser2);
+            foreach (GameObject laser in lasers)
+                Destroy(laser);
 
             attackCount++;
             yield return new WaitForSeconds(attackInterval);
         }
 
-        StopAttack(); // ✅ Gọi StopAttack để đảm bảo dọn dẹp và callback
+        StopAttack();
+    }
+
+    // ✅ Hàm lấy index ngẫu nhiên không trùng
+    private List<int> GetUniqueRandomIndices(int count, int max)
+    {
+        List<int> indices = new List<int>();
+        List<int> available = new List<int>();
+
+        for (int i = 0; i < max; i++) available.Add(i);
+
+        for (int i = 0; i < Mathf.Min(count, max); i++)
+        {
+            int randIndex = UnityEngine.Random.Range(0, available.Count);
+            indices.Add(available[randIndex]);
+            available.RemoveAt(randIndex);
+        }
+
+        return indices;
     }
 }

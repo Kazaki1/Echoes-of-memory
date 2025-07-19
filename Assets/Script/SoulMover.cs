@@ -45,7 +45,7 @@ public class SoulMover : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = movement * moveSpeed;
+        rb.linearVelocity = movement * moveSpeed;
     }
 
     public void TakeDamage(int damage)
@@ -67,7 +67,7 @@ public class SoulMover : MonoBehaviour
     }
     public void Die()
     {
-        if (PlayerData.Instance != null)            
+        if (PlayerData.Instance != null)
         {
             PlayerData.Instance.currentHealth -= 20;
             PlayerData.Instance.currentHealth = Mathf.Max(PlayerData.Instance.currentHealth, 0);
