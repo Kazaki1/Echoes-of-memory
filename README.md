@@ -39,8 +39,11 @@
 - Hệ thống kẻ thù
 - Hệ thống Audio
 ## **Một số hình ảnh**
+1.
 <img width="899" height="529" alt="image" src="https://github.com/user-attachments/assets/f15096c6-5c51-4e90-b130-5aab57d790fa" />
+2.
 <img width="895" height="474" alt="image" src="https://github.com/user-attachments/assets/5e4fc24e-cd5d-4d2a-8a1d-a724e8292a98" />
+3.
 <img width="1001" height="525" alt="image" src="https://github.com/user-attachments/assets/88f3c448-ce8f-4383-88bd-874596310cc7" />
 
 
