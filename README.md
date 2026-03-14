@@ -27,7 +27,6 @@
 
 - **Võ Thành Luân**: Thiết kế màn chơi, bối cảnh, xây dựng cơ chế di chuyển, chiến đấu, sáng tác kịch bản
 - **Trần Huy Cường**: Xử lý âm thanh, thiết kế màn chơi, giao diện game (Menu, pause,..), xử lý cơ chế save game
-- **Nguyễn Anh Kha**: Xử lý cơ chế cutscene dựa trên hành động của người chơi
 
 ## **Các chức năng đã xây dựng được**
 
